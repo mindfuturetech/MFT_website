@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Fleet Safety Solutions by Mindfuturetech" />
+  <title>AI Fleet Safety · Mindfuturetech</title>
+  <link rel="icon" type="image/jpeg" href="assets/images/mftlogo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    /* Fleet Safety Page Styles */
+    :root {
+      --fs-primary: #0b1a2f;
+      --fs-accent: #f5b041;
+      --fs-accent-soft: rgba(245, 176, 65, 0.12);
+      --fs-border: #e2e8f0;
+      --fs-text: #1e293b;
+      --fs-text-light: #475569;
+    }
+
+    .fleet-safety-page {
+      background: #f8fafc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--fs-text);
+    }
+
+    /* Hero */
+    .fs-hero {
+      background: linear-gradient(145deg, #0b1a2f 0%, #1a2f44 100%);
+      color: white;
+      padding: 80px 0 80px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 84px;
+    }
+
+    .fs-hero::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(245, 176, 65, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .fs-hero .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fs-hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .fs-hero h1 span {
+      background: linear-gradient(135deg, #f5b041, #e67e22);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fs-hero p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .fs-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .fs-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.25s ease;
+      border: none;
+      cursor: pointer;
+      background: var(--fs-accent);
+      color: #0b1a2f;
+      box-shadow: 0 8px 24px rgba(245, 176, 65, 0.3);
+    }
+
+    .fs-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(245, 176, 65, 0.45);
+      background: #f7c35c;
+    }
+
+    .fs-btn-outline {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      box-shadow: none;
+    }
+
+    .fs-btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--fs-accent);
+      color: var(--fs-accent);
+    }
+
+    /* Stats */
+    .fs-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px 64px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .fs-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fs-stat-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #f5b041;
+      line-height: 1.2;
+    }
+
+    .fs-stat-label {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Clients */
+    .fs-clients {
+      background: white;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--fs-border);
+    }
+
+    .fs-clients-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 32px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fs-client-logo {
+      font-weight: 600;
+      color: #334155;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      opacity: 0.7;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+
+    .fs-client-logo:hover { opacity: 1; }
+    .fs-client-logo strong { font-weight: 700; color: #0b1a2f; }
+
+    /* Features */
+    .fs-features {
+      padding: 72px 0;
+      background: #f8fafc;
+    }
+
+    .fs-features .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fs-section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .fs-section-sub {
+      text-align: center;
+      color: var(--fs-text-light);
+      max-width: 640px;
+      margin: 0 auto 48px;
+      font-size: 1.1rem;
+    }
+
+    .fs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .fs-card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 24px 32px;
+      border: 1px solid var(--fs-border);
+      transition: 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .fs-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--fs-accent);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+    }
+
+    .fs-card-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .fs-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .fs-card p {
+      color: var(--fs-text-light);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .fs-card .fs-tag {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 40px;
+      background: var(--fs-accent-soft);
+      color: #b76e1e;
+    }
+
+    /* Stories */
+    .fs-stories {
+      background: white;
+      padding: 72px 0;
+    }
+
+    .fs-story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fs-story-card {
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 24px 28px 28px;
+      border-left: 5px solid var(--fs-accent);
+    }
+
+    .fs-story-card .quote {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .fs-story-card .source {
+      font-size: 0.85rem;
+      color: var(--fs-text-light);
+    }
+
+    .fs-story-card .source strong {
+      color: #0b1a2f;
+    }
+
+    /* How AI Works */
+    .fs-how-ai {
+      padding: 60px 0;
+      background: white;
+    }
+
+    .fs-how-ai-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fs-how-item {
+      padding: 16px;
+      border-radius: 12px;
+      background: #f8fafc;
+      transition: 0.2s;
+    }
+
+    .fs-how-item:hover {
+      background: var(--fs-accent-soft);
+    }
+
+    .fs-how-item strong {
+      display: block;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .fs-how-item span {
+      color: var(--fs-text-light);
+      font-size: 0.9rem;
+    }
+
+    /* FAQ */
+    .fs-faq {
+      padding: 72px 0;
+      background: #f8fafc;
+    }
+
+    .fs-faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .fs-faq-item {
+      border-bottom: 1px solid var(--fs-border);
+      padding: 18px 0;
+    }
+
+    .fs-faq-item strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #0b1a2f;
+    }
+
+    .fs-faq-item p {
+      color: var(--fs-text-light);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    /* CTA Bottom */
+    .fs-cta-bottom {
+      background: linear-gradient(145deg, #0b1a2f 0%, #1a2f44 100%);
+      color: white;
+      padding: 64px 0;
+      text-align: center;
+    }
+
+    .fs-cta-bottom h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .fs-cta-bottom p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+
+    @media (max-width: 768px) {
+      .fs-faq-grid { grid-template-columns: 1fr; }
+      .fs-stats { gap: 24px; }
+      .fs-hero h1 { font-size: 2rem; }
+      .fs-hero p { font-size: 1rem; }
+      .fs-hero { margin-top: 70px; padding: 60px 0; }
+    }
+  </style>
+</head>
+<body class="fleet-safety-page">
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero -->
+    <section class="fs-hero">
+      <div class="container">
+        <h1>AI Fleet Safety <span>that prevents risk</span> and builds trust</h1>
+        <p>Accurate alerts that protect drivers in the moment. Recognition-based driver coaching for safer habits that last. AI agents to dramatically scale safety programs.</p>
+        <div class="fs-cta-group">
+          <a href="index.html#contact" class="fs-btn">Book a demo</a>
+          <a href="index.html#contact" class="fs-btn fs-btn-outline">Book a demo</a>
+        </div>
+
+        <!-- Stats -->
+        <div class="fs-stats">
+          <div class="fs-stat-item">
+            <span class="fs-stat-number">100%</span>
+            <span class="fs-stat-label">Drive time analyzed</span>
+          </div>
+          <div class="fs-stat-item">
+            <span class="fs-stat-number">30B+</span>
+            <span class="fs-stat-label">Driving miles analyzed</span>
+          </div>
+          <div class="fs-stat-item">
+            <span class="fs-stat-number">150B+</span>
+            <span class="fs-stat-label">Minutes of driving intelligence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <div class="fs-clients">
+      <div class="fs-clients-grid">
+        <span class="fs-client-logo"><strong>ABC</strong> Supply</span>
+        <span class="fs-client-logo"><strong>Knight</strong> Transportation</span>
+        <span class="fs-client-logo"><strong>Swift</strong></span>
+        <span class="fs-client-logo"><strong>Loomis</strong></span>
+        <span class="fs-client-logo"><strong>Allan Myers</strong></span>
+        <span class="fs-client-logo"><strong>PRIME</strong> inc.</span>
+        <span class="fs-client-logo"><strong>Rumpke</strong></span>
+        <span class="fs-client-logo"><strong>Shamrock</strong> Foods</span>
+        <span class="fs-client-logo"><strong>Sunstate</strong> Equipment</span>
+        <span class="fs-client-logo"><strong>United Rentals</strong></span>
+        <span class="fs-client-logo"><strong>ACE</strong></span>
+        <span class="fs-client-logo"><strong>Boyle</strong> &amp; UPS</span>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <section class="fs-features">
+      <div class="container">
+        <h2 class="fs-section-title">Full-context, trusted intelligence that fleets can scale.</h2>
+        <p class="fs-section-sub">Act on risk from every angle and drive lasting behavior change. Coach consistently and accelerate incident response.</p>
+
+        <div class="fs-grid">
+          <div class="fs-card">
+            <span class="fs-card-icon">🛡️</span>
+            <h3>360° EDGE AI</h3>
+            <p>Detection and prevention at the point of risk. Build trust by recognizing safe driving and detecting risk across the cab and road.</p>
+            <span class="fs-tag">Prevention</span>
+          </div>
+          <div class="fs-card">
+            <span class="fs-card-icon">🧠</span>
+            <h3>Full-Scene Driver Coaching</h3>
+            <p>Consistent driver coaching without the manual burden. Prevent incidents in real time by prompting drivers to self-correct.</p>
+            <span class="fs-tag">Coaching</span>
+          </div>
+          <div class="fs-card">
+            <span class="fs-card-icon">⚡</span>
+            <h3>Always-On Incident Management</h3>
+            <p>Incident response already underway. Accelerate resolution around the clock with automated escalations and full records.</p>
+            <span class="fs-tag">Response</span>
+          </div>
+          <div class="fs-card">
+            <span class="fs-card-icon">📊</span>
+            <h3>Risk-Correlated Safety Score</h3>
+            <p>Real benchmarks. Measurable proof at every level. Keep drivers engaged with an explainable GreenZone Score®.</p>
+            <span class="fs-tag">GreenZone®</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stories -->
+    <section class="fs-stories">
+      <div class="fs-story-grid">
+        <div class="fs-story-card">
+          <div class="quote">“Severe distracted driving alerts dropped more than 30% over 12 months.”</div>
+          <div class="source"><strong>Rumpke</strong> Waste &amp; Recycling</div>
+        </div>
+        <div class="fs-story-card">
+          <div class="quote">“98% of drivers improved with AI self-coaching alone.”</div>
+          <div class="source"><strong>CEPRA Landscape</strong></div>
+        </div>
+        <div class="fs-story-card">
+          <div class="quote">“Exonerated 8 drivers in 12 months with same-day fault determination.”</div>
+          <div class="source"><strong>RPM Pizza</strong> (Domino's)</div>
+        </div>
+        <div class="fs-story-card">
+          <div class="quote">“Improved fleetwide GreenZone® Score from 539 to 800+.”</div>
+          <div class="source"><strong>Roy Jorgensen</strong> Associates</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How AI Works -->
+    <section class="fs-how-ai">
+      <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+        <h2 style="font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 12px;">How AI improves fleet safety</h2>
+        <p style="text-align: center; color: var(--fs-text-light); max-width: 640px; margin: 0 auto 40px;">AI-powered dashcams understand the full driving context, detect risk in real time, coach and recognize drivers consistently, and connect safer behavior to measurable business impact.</p>
+        <div class="fs-how-ai-grid">
+          <div class="fs-how-item"><strong>👁️ Computer Vision</strong><span>Understand what's happening inside and around the vehicle.</span></div>
+          <div class="fs-how-item"><strong>⚡ Edge AI</strong><span>Detect risk and alert drivers in the moment.</span></div>
+          <div class="fs-how-item"><strong>🛡️ Driver Safety</strong><span>See safe and risky behaviors across 100% of drive time.</span></div>
+          <div class="fs-how-item"><strong>📈 Proactive Risk Detection</strong><span>Surface risk trends early so teams intervene before an incident.</span></div>
+          <div class="fs-how-item"><strong>🎯 Real-Time Coaching</strong><span>Recognize safe driving and coach risky behaviors.</span></div>
+          <div class="fs-how-item"><strong>📡 Video Telematics Platform</strong><span>Connect video, events, coaching, claims, and GreenZone® impact.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="fs-faq">
+      <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+        <h2 style="font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 32px;">Commonly Asked Questions</h2>
+        <div class="fs-faq-grid">
+          <div class="fs-faq-item"><strong>What is fleet safety software?</strong><p>AI-driven platform that monitors driver behavior, detects risks, and provides coaching to reduce accidents.</p></div>
+          <div class="fs-faq-item"><strong>How do AI dash cams improve fleet safety?</strong><p>They provide real-time alerts, full-context video, and driver coaching to prevent incidents before they happen.</p></div>
+          <div class="fs-faq-item"><strong>What are the benefits of video telematics?</strong><p>Reduced crashes, lower insurance costs, improved driver behavior, and faster claims resolution.</p></div>
+          <div class="fs-faq-item"><strong>How can fleets reduce accidents?</strong><p>By using AI to detect risky behaviors, coach drivers, and provide actionable safety insights.</p></div>
+          <div class="fs-faq-item"><strong>What causes most commercial vehicle accidents?</strong><p>Distracted driving, speeding, following too closely, and fatigue are top causes.</p></div>
+          <div class="fs-faq-item"><strong>How does Netradyne improve driver safety?</strong><p>Through 360° AI vision, real-time alerts, and recognition-based coaching that builds safer habits.</p></div>
+          <div class="fs-faq-item"><strong>What is a fleet safety score?</strong><p>A data-driven metric that evaluates driver performance based on safe and risky behaviors.</p></div>
+          <div class="fs-faq-item"><strong>What is GreenZone® Score?</strong><p>A proprietary score that correlates safe driving with measurable business outcomes and risk reduction.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Bottom -->
+    <section class="fs-cta-bottom">
+      <h2>Stop watching risk. Start preventing it.</h2>
+      <p>See how Netradyne helps fleets prevent risk in real time, act with consistency, and prove sustained safety impact at scale.</p>
+      <a href="index.html#contact" class="fs-btn" style="background: white; color: #0b1a2f; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">Book Demo</a>
+    </section>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load Components -->
+  <script src="js/load-components.js"></script>
+</body>
+</html>
