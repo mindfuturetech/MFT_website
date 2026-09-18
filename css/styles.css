@@ -747,7 +747,7 @@ body {
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
-    /* padding: 70px 0 40px; */
+
   }
 
   .hero-slider {
@@ -793,7 +793,6 @@ body {
   align-items: center;
   overflow: hidden;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .hero-slider {
@@ -1005,7 +1004,7 @@ body {
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
-    padding: 70px 0 40px;
+    /* padding: 70px 0 40px; */
   }
 
   .hero-slider {

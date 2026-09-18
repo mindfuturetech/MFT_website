@@ -92,25 +92,11 @@
   color: white;
 }
 
-.contact-tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 8px 20px;
-  border-radius: 30px;
-  background: rgba(91, 127, 166, 0.2);
-  color: #7b9ec4;
-  margin-bottom: 20px;
-  border: 1px solid rgba(91, 127, 166, 0.2);
-}
-
 .contact-hero-text h1 {
   font-size: clamp(2.4rem, 5vw, 4rem);
   font-weight: 800;
   line-height: 1.15;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -0.03em;
 }
 
@@ -128,73 +114,21 @@
   line-height: 1.7;
 }
 
-/* Hero Visual */
+/* Hero Visual - Image */
 .contact-hero-visual {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.contact-mail-animation {
-  position: relative;
-  width: 300px;
-  height: 300px;
-}
-
-.contact-mail-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4.5rem;
-  z-index: 3;
-  animation: iconPulse 2.5s ease-in-out infinite;
-}
-
-.contact-mail-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid rgba(91, 127, 166, 0.15);
-}
-
-.contact-mail-ring.ring-1 {
+.contact-hero-visual img {
   width: 100%;
-  height: 100%;
-  animation: spin 20s linear infinite;
+  max-width: 500px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  object-fit: cover;
 }
-
-.contact-mail-ring.ring-2 {
-  width: 75%;
-  height: 75%;
-  border-color: rgba(26, 188, 156, 0.15);
-  animation: spin 15s linear infinite reverse;
-}
-
-.contact-mail-ring.ring-3 {
-  width: 50%;
-  height: 50%;
-  border-color: rgba(155, 89, 182, 0.2);
-  animation: spin 10s linear infinite;
-}
-
-.contact-mail-particles {
-  position: absolute;
-  inset: 0;
-}
-
-.contact-particle {
-  position: absolute;
-  font-size: 1.3rem;
-  animation: particleFloat 4.5s ease-in-out infinite;
-}
-
-.contact-particle.p1 { top: 8%; left: 10%; animation-delay: 0s; }
-.contact-particle.p2 { top: 12%; right: 12%; animation-delay: 0.9s; }
-.contact-particle.p3 { bottom: 15%; left: 8%; animation-delay: 1.8s; }
-.contact-particle.p4 { bottom: 10%; right: 10%; animation-delay: 2.7s; }
 
 /* Contact Section */
 .contact-section {
@@ -397,21 +331,6 @@
   50% { opacity: 1; }
 }
 
-@keyframes spin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes iconPulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.06); }
-}
-
-@keyframes particleFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-  50% { transform: translate(0, -25px) scale(1.15); opacity: 1; }
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
   .contact-grid {
@@ -425,7 +344,7 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .contact-hero-text p {
     max-width: 100%;
     margin-left: auto;
@@ -439,24 +358,19 @@
     padding: 40px 0;
     min-height: auto;
   }
-  
-  .contact-mail-animation {
-    width: 220px;
-    height: 220px;
+
+  .contact-hero-visual img {
+    max-width: 100%;
   }
-  
-  .contact-mail-icon {
-    font-size: 3.5rem;
-  }
-  
+
   .contact-form-wrapper {
     padding: 24px;
   }
-  
+
   .contact-form-row {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-map-wrapper iframe {
     height: 250px;
   }
