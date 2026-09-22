@@ -1387,22 +1387,307 @@ body {
     padding: 60px 0;
   }
 }
+/* =============================================
+   About Section - Content
+   ============================================= */
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.about-text {
+  max-width: 100%;
+}
+
+/* Paragraphs - comfortable reading width */
+.about-text > p {
+  max-width: 1000px;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.about-text > p strong {
+  color: #0b1a2f;
+  font-weight: 600;
+}
+
+/* ---- Focus Areas ---- */
+.about-focus {
+  margin: 32px 0 24px;
+  padding: 32px 36px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.about-focus-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b1a2f;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.about-focus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 32px;
+}
+
+.about-focus-list li {
+  position: relative;
+  padding: 6px 0 6px 24px;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.about-focus-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* ---- Closing paragraph ---- */
+.about-closing {
+  color: #0b1a2f !important;
+  font-weight: 500;
+  font-size: 1.05rem !important;
+  padding: 20px 24px;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin: 24px 0 32px !important;
+}
 
 /* =============================================
-   About Info Grid (Who We Are)
+   About Info Grid - 3 Columns
    ============================================= */
 
 .about-info-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin: 20px 0 24px;
+  margin: 32px 0 24px;
 }
 
 .about-info-item {
   display: flex;
   gap: 14px;
-  padding: 16px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: 0.3s ease;
+}
+
+.about-info-item:hover {
+  border-color: #cbd5e1;
+}
+
+.about-info-item h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0b1a2f;
+  margin-bottom: 4px;
+}
+
+.about-info-item p {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* =============================================
+   About Highlights
+   ============================================= */
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: 0.3s ease;
+  min-height: 140px;
+}
+
+.highlight:hover {
+  border-color: #cbd5e1;
+}
+
+.highlight-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0b1a2f;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.highlight-label {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .about-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-focus-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-focus {
+    padding: 24px 20px;
+  }
+
+  .about-focus-title {
+    font-size: 1.05rem;
+  }
+
+  .about-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .highlight {
+    padding: 22px 16px;
+    min-height: 110px;
+    border-radius: 12px;
+  }
+
+  .highlight-num {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+
+  .highlight-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text > p {
+    font-size: 0.95rem;
+  }
+}
+/* ---- Focus Areas ---- */
+.about-focus {
+  margin: 32px 0 24px;
+  padding: 32px 36px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  /* border-left: 4px solid #f5b041; */
+}
+
+.about-focus-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b1a2f;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.about-focus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 32px;
+}
+
+.about-focus-list li {
+  position: relative;
+  padding: 6px 0 6px 28px;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.about-focus-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 14px;
+  height: 2px;
+  background: #f5b041;
+  border-radius: 2px;
+}
+
+/* ---- Closing paragraph ---- */
+.about-closing {
+  color: #0b1a2f !important;
+  font-weight: 500;
+  font-size: 1.05rem !important;
+  padding: 20px 24px;
+  background: #f8fafc;
+  border-left: 3px solid #f5b041;
+  border-radius: 8px;
+  margin: 24px 0 32px !important;
+}
+
+/* =============================================
+   About Info Grid - 3 Columns
+   ============================================= */
+
+.about-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0 24px;
+}
+
+.about-info-item {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
   background: #f8fafc;
   border-radius: 12px;
   border: 1px solid #e2e8f0;
@@ -1413,23 +1698,62 @@ body {
   border-color: #f5b041;
 }
 
-.about-info-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
 .about-info-item h4 {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #0b1a2f;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .about-info-item p {
   font-size: 0.85rem;
   color: #475569;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
+}
+
+/* =============================================
+   About Highlights
+   ============================================= */
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: 0.3s ease;
+  min-height: 140px;
+}
+
+.highlight:hover {
+  border-color: #f5b041;
+}
+
+.highlight-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #e67e22;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.highlight-label {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 /* =============================================
@@ -1437,28 +1761,63 @@ body {
    ============================================= */
 
 @media (max-width: 1024px) {
-  .why-choose-grid {
+  .about-info-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .services-grid {
+  .about-focus-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-highlights {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-focus {
+    padding: 24px 20px;
+  }
+
+  .about-focus-title {
+    font-size: 1.05rem;
   }
 
   .about-info-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero-banner-pages {
-    justify-content: center;
+  .about-highlights {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
-  .banner-page {
-    min-width: 120px;
-    padding: 12px 16px;
+  .highlight {
+    padding: 22px 16px;
+    min-height: 110px;
+    border-radius: 12px;
+  }
+
+  .highlight-num {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+
+  .highlight-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
   }
 }
 
+@media (max-width: 480px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text > p {
+    font-size: 0.95rem;
+  }
+}
 @media (max-width: 768px) {
   .why-choose-grid {
     grid-template-columns: 1fr;
@@ -4193,5 +4552,74 @@ body {
   .services-grid,
   .services-grid-4 {
     grid-template-columns: 1fr !important;
+  }
+}
+/* =============================================
+   FIX: Submenu opens only on hovering the actual menu item
+   (Industries → AI, HR, IoT, etc.)
+   ============================================= */
+
+@media (min-width: 769px) {
+
+  /* Make the wrapper shrink to fit the actual item */
+  #industriesDropdown .mega-item-wrapper.has-submenu {
+    width: fit-content !important;
+    max-width: 100% !important;
+  }
+
+  /* Make the item itself hug the text */
+  #industriesDropdown .mega-item-wrapper.has-submenu > .mega-item {
+    display: inline-flex !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: fit-content !important;
+  }
+
+  /* Submenu positioning relative to the actual item */
+  #industriesDropdown .mega-item-wrapper.has-submenu > .mega-submenu {
+    top: 0;
+    left: 100%;
+    margin-left: 4px;
+  }
+
+  /* Right column items open submenu on the left */
+  #industriesDropdown .mega-item-wrapper.has-submenu.submenu-left > .mega-submenu {
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-right: 4px;
+  }
+}
+/* =============================================
+   FIX: Submenu shrinks to fit its content
+   ============================================= */
+
+@media (min-width: 769px) {
+
+  /* Submenu - hug content, no extra space */
+  #industriesDropdown .mega-submenu {
+    width: max-content !important;
+    min-width: auto !important;
+    max-width: 320px !important;
+    padding: 6px !important;
+  }
+
+  /* Submenu items - hug content */
+  #industriesDropdown .mega-subitem {
+    display: block;
+    width: auto !important;
+    padding: 10px 16px !important;
+    white-space: nowrap !important;
+  }
+
+  #industriesDropdown .mega-subitem strong {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Remove any leftover margins that create space */
+  #industriesDropdown .mega-submenu .mega-subitem:last-child {
+    margin-bottom: 0 !important;
   }
 }
