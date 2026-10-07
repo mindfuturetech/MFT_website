@@ -211,18 +211,18 @@ body {
 
 
 /* ---- Industries specific (already left-aligned, keep size) ---- */
-#industriesDropdown .industries-mega-menu {
+/* #industriesDropdown .industries-mega-menu {
   left: 0 !important;
   transform: translateY(12px) !important;
   min-width: 620px !important;
   max-width: 720px;
   padding: 20px 24px !important;
-}
+} */
 
-#industriesDropdown.open .industries-mega-menu,
+/* #industriesDropdown.open .industries-mega-menu,
 #industriesDropdown:hover .industries-mega-menu {
   transform: translateY(0) !important;
-}
+} */
 
 /* For Company with 4 items - 2 columns */
 #companyDropdown .mega-menu-grid {
@@ -299,7 +299,7 @@ body {
    ============================================= */
 
 /* Override the centered positioning for Industries only */
-#industriesDropdown .industries-mega-menu {
+/* #industriesDropdown .industries-mega-menu {
   left: 0 !important;
   transform: translateX(0) translateY(12px) !important;
   min-width: 620px !important;
@@ -355,7 +355,7 @@ body {
 .industries-grid-2col .mega-item:hover strong,
 .industries-grid-2col .mega-item:hover small {
   color: var(--accent);
-}
+} */
 
 /* ----- Submenu Wrapper ----- */
 .mega-item-wrapper {
@@ -654,6 +654,220 @@ body {
 
 .product-card.border-animate::after {
   background: var(--bg-primary);
+}
+/* =============================================
+   Solutions Mega Menu - Single Column
+   ============================================= */
+
+.solutions-mega-menu {
+  min-width: 260px !important;
+  max-width: 320px !important;
+  padding: 8px !important;
+}
+
+.solutions-single-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.solutions-single-col .mega-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px !important;
+  width: 100% !important;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 0.88rem;
+}
+
+.solutions-single-col .mega-item strong {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Submenu for Solutions items */
+.solutions-single-col .mega-item-wrapper {
+  position: relative;
+}
+
+.solutions-single-col .mega-item-wrapper.has-submenu .submenu-arrow {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+  margin-left: 8px;
+}
+
+.solutions-single-col .mega-item-wrapper.has-submenu:hover .submenu-arrow {
+  color: var(--accent);
+}
+
+.solutions-single-col .mega-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 8px;
+  min-width: 220px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 300;
+}
+
+.solutions-single-col .mega-item-wrapper.has-submenu:hover .mega-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* =============================================
+   Mobile — Solutions full-width
+   ============================================= */
+
+@media (max-width: 968px) {
+  #solutionsDropdown .solutions-mega-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 0 8px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+
+  .solutions-single-col {
+    width: 100%;
+  }
+
+  .solutions-single-col .mega-item {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    white-space: normal;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
+  .solutions-single-col .mega-item-wrapper.has-submenu .submenu-arrow {
+    display: block;
+    transform: rotate(0deg);
+    transition: transform 0.25s ease;
+  }
+
+  .solutions-single-col .mega-item-wrapper.open .submenu-arrow {
+    transform: rotate(90deg);
+    color: var(--accent);
+  }
+
+  .solutions-single-col .mega-submenu {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-left: 2px solid var(--accent) !important;
+    background: rgba(0, 0, 0, 0.02) !important;
+    margin: 4px 0 !important;
+    padding: 6px 0 6px 12px !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    display: none;
+  }
+
+  .solutions-single-col .mega-item-wrapper.open .mega-submenu {
+    display: block;
+  }
+}
+/* FORCE Solutions menu layout */
+#solutionsDropdown .solutions-mega-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  min-width: 260px !important;
+  max-width: 320px !important;
+  padding: 8px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+#solutionsDropdown .solutions-single-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+#solutionsDropdown .solutions-single-col .mega-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 10px 14px !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+  font-size: 0.88rem !important;
+  border-radius: 8px !important;
+}
+
+#solutionsDropdown .solutions-single-col .mega-item-wrapper {
+  position: relative !important;
+}
+
+#solutionsDropdown .solutions-single-col .mega-submenu {
+  position: absolute !important;
+  top: 0 !important;
+  left: 100% !important;
+  margin-left: 8px !important;
+  min-width: 220px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12) !important;
+  padding: 8px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateX(-8px) !important;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s !important;
+  z-index: 300 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+#solutionsDropdown .solutions-single-col .mega-item-wrapper:hover .mega-submenu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(0) !important;
+}
+
+#solutionsDropdown .solutions-single-col .mega-subitem {
+  display: block !important;
+  padding: 10px 14px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  color: #1e293b !important;
+  white-space: nowrap !important;
+  font-size: 0.85rem !important;
+}
+
+#solutionsDropdown .solutions-single-col .mega-subitem:hover {
+  background: var(--accent-soft) !important;
+  color: var(--accent) !important;
 }
 /* =============================================
    Full-Page Hero Slider
@@ -1667,8 +1881,8 @@ body {
   font-weight: 500;
   font-size: 1.05rem !important;
   padding: 20px 24px;
-  background: #f8fafc;
-  border-left: 3px solid #f5b041;
+  background: #f3f3ef;
+  /* border-left: 3px solid #f5b041; */
   border-radius: 8px;
   margin: 24px 0 32px !important;
 }
@@ -4154,24 +4368,23 @@ body {
   padding: 8px;
 }
   /* Open state */
-  .nav-dropdown.open .mega-menu,
+  /* .nav-dropdown.open .mega-menu,
   .nav-mega-full.open .mega-menu,
   #industriesDropdown.open .industries-mega-menu {
     display: block;
-  }
+  } */
 
   /* ---- Grid → single column ---- */
   .mega-menu-grid,
   .mega-grid-2,
-  #companyDropdown .mega-menu-grid,
-  .industries-grid-2col {
+  #companyDropdown .mega-menu-grid {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
     width: 100%;
   }
 
   /* ---- Mega items - full width stacked ---- */
-  .mega-item,
+  /* .mega-item,
   .industries-grid-2col .mega-item {
     width: 100%;
     padding: 12px 16px;
@@ -4179,7 +4392,7 @@ body {
     border-radius: 8px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     justify-content: space-between;
-  }
+  } */
 
   .mega-item:last-child {
     border-bottom: none;
@@ -4353,7 +4566,7 @@ body {
   }
 
   /* --- INDUSTRIES: keep wide, 2-column, untouched --- */
-  #industriesDropdown .industries-mega-menu {
+  /* #industriesDropdown .industries-mega-menu {
     width: max-content !important;
     min-width: auto !important;
     max-width: 720px !important;
@@ -4363,7 +4576,7 @@ body {
     display: grid !important;
     grid-template-columns: auto auto !important;
     gap: 4px 32px !important;
-  }
+  } */
 }
 
 
@@ -4373,8 +4586,7 @@ body {
   /* ALL dropdown menus full width */
   #solutionsDropdown .mega-menu,
   #productsDropdown .mega-menu,
-  #companyDropdown .mega-menu,
-  #industriesDropdown .industries-mega-menu {
+  #companyDropdown .mega-menu{
     position: static !important;
     left: auto !important;
     right: auto !important;
@@ -4396,16 +4608,14 @@ body {
   /* Open state */
   #solutionsDropdown.open .mega-menu,
   #productsDropdown.open .mega-menu,
-  #companyDropdown.open .mega-menu,
-  #industriesDropdown.open .industries-mega-menu {
+  #companyDropdown.open .mega-menu {
     display: block !important;
   }
 
   /* ALL grids become single column, full width */
   #solutionsDropdown .mega-menu-grid,
   #productsDropdown .mega-menu-grid,
-  #companyDropdown .mega-menu-grid,
-  #industriesDropdown .industries-grid-2col {
+  #companyDropdown .mega-menu-grid {
     display: block !important;
     width: 100% !important;
     grid-template-columns: 1fr !important;
@@ -4415,8 +4625,7 @@ body {
   /* ALL items full width, no leftover space */
   #solutionsDropdown .mega-item,
   #productsDropdown .mega-item,
-  #companyDropdown .mega-item,
-  #industriesDropdown .mega-item {
+  #companyDropdown .mega-item {
     display: flex !important;
     align-items: center;
     justify-content: space-between;
@@ -4431,34 +4640,34 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   }
 
-  #industriesDropdown .mega-item:last-child {
+  /* #industriesDropdown .mega-item:last-child {
     border-bottom: none;
-  }
+  } */
 }
 /* =============================================
    INDUSTRIES: Remove extra space (desktop only)
    ============================================= */
 
-@media (min-width: 769px) {
+/* @media (min-width: 769px) { */
 
   /* Industries menu - shrink to content */
-  #industriesDropdown .industries-mega-menu {
+  /* #industriesDropdown .industries-mega-menu {
     width: max-content !important;
     min-width: auto !important;
-    max-width: 600px !important;     /* narrower cap */
-    padding: 12px 16px !important;   /* less padding */
-  }
+    max-width: 600px !important;     
+    padding: 12px 16px !important;   
+  } */
 
   /* Industries grid - 2 columns, each hugs content */
-  #industriesDropdown .industries-grid-2col {
+  /* #industriesDropdown .industries-grid-2col {
     display: grid !important;
     grid-template-columns: max-content max-content !important;
     gap: 2px 32px !important;
     align-items: start !important;
-  }
+  } */
 
   /* Industries items - no extra height, no border */
-  #industriesDropdown .industries-grid-2col .mega-item {
+  /* #industriesDropdown .industries-grid-2col .mega-item {
     display: inline-flex !important;
     align-items: center;
     justify-content: space-between;
@@ -4471,36 +4680,36 @@ body {
     border-radius: 8px;
     white-space: nowrap;
     box-sizing: border-box;
-  }
+  } */
 
   /* Strong text - smaller, tighter */
-  #industriesDropdown .industries-grid-2col .mega-item strong {
+  /* #industriesDropdown .industries-grid-2col .mega-item strong {
     font-size: 0.85rem !important;
     font-weight: 600 !important;
     line-height: 1.3 !important;
-  }
+  } */
 
   /* Submenu arrow */
-  #industriesDropdown .industries-grid-2col .submenu-arrow {
+  /* #industriesDropdown .industries-grid-2col .submenu-arrow {
     margin-left: 4px !important;
     font-size: 1rem;
-  }
+  } */
 
   /* Submenu items - tight */
-  #industriesDropdown .mega-submenu {
+  /* #industriesDropdown .mega-submenu {
     min-width: 220px !important;
     padding: 6px !important;
-  }
+  } */
 
-  #industriesDropdown .mega-subitem {
+  /* #industriesDropdown .mega-subitem {
     padding: 8px 12px !important;
     white-space: nowrap;
-  }
+  } */
 
-  #industriesDropdown .mega-subitem strong {
+  /* #industriesDropdown .mega-subitem strong {
     font-size: 0.82rem !important;
-  }
-}
+  } */
+/* } */
 /* =============================================
    Solutions & Products Grid - 3 columns
    ============================================= */
@@ -4559,67 +4768,951 @@ body {
    (Industries → AI, HR, IoT, etc.)
    ============================================= */
 
-@media (min-width: 769px) {
+/* @media (min-width: 769px) { */
 
   /* Make the wrapper shrink to fit the actual item */
-  #industriesDropdown .mega-item-wrapper.has-submenu {
+  /* #industriesDropdown .mega-item-wrapper.has-submenu {
     width: fit-content !important;
     max-width: 100% !important;
-  }
+  } */
 
   /* Make the item itself hug the text */
-  #industriesDropdown .mega-item-wrapper.has-submenu > .mega-item {
+  /* #industriesDropdown .mega-item-wrapper.has-submenu > .mega-item {
     display: inline-flex !important;
     width: auto !important;
     min-width: 0 !important;
     max-width: fit-content !important;
-  }
+  } */
 
   /* Submenu positioning relative to the actual item */
-  #industriesDropdown .mega-item-wrapper.has-submenu > .mega-submenu {
+  /* #industriesDropdown .mega-item-wrapper.has-submenu > .mega-submenu {
     top: 0;
     left: 100%;
     margin-left: 4px;
-  }
+  } */
 
   /* Right column items open submenu on the left */
-  #industriesDropdown .mega-item-wrapper.has-submenu.submenu-left > .mega-submenu {
+  /* #industriesDropdown .mega-item-wrapper.has-submenu.submenu-left > .mega-submenu {
     left: auto;
     right: 100%;
     margin-left: 0;
     margin-right: 4px;
-  }
-}
+  } */
+/* } */
 /* =============================================
    FIX: Submenu shrinks to fit its content
    ============================================= */
 
-@media (min-width: 769px) {
+/* /* @media (min-width: 769px) { */
 
   /* Submenu - hug content, no extra space */
-  #industriesDropdown .mega-submenu {
+  /* #industriesDropdown .mega-submenu {
     width: max-content !important;
     min-width: auto !important;
     max-width: 320px !important;
     padding: 6px !important;
-  }
+  } */
 
   /* Submenu items - hug content */
-  #industriesDropdown .mega-subitem {
+  /* #industriesDropdown .mega-subitem {
     display: block;
     width: auto !important;
     padding: 10px 16px !important;
     white-space: nowrap !important;
-  }
+  } */
 
-  #industriesDropdown .mega-subitem strong {
+  /* #industriesDropdown .mega-subitem strong {
     font-size: 0.85rem !important;
     font-weight: 600 !important;
     white-space: nowrap !important;
-  }
+  } */
 
   /* Remove any leftover margins that create space */
-  #industriesDropdown .mega-submenu .mega-subitem:last-child {
+  /* #industriesDropdown .mega-submenu .mega-subitem:last-child {
     margin-bottom: 0 !important;
+  } */
+/* } */
+/* =============================================
+   SOLUTIONS MENU — LEFT ALIGN ITEMS
+   ============================================= */
+
+@media (min-width: 769px) {
+
+  html body #solutionsDropdown .solutions-single-col .mega-item {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    gap: 8px !important;
+  }
+
+  html body #solutionsDropdown .solutions-single-col .mega-item span:first-child {
+    text-align: left !important;
+    flex: 1 1 auto !important;
+  }
+
+  html body #solutionsDropdown .solutions-single-col .submenu-arrow {
+    margin-left: auto !important;
+  }
+
+  html body #solutionsDropdown .solutions-single-col .mega-subitem {
+    text-align: left !important;
+  }
+}
+/* =============================================
+   SOLUTIONS SUBMENU — Remove extra right space
+   ============================================= */
+
+@media (min-width: 769px) {
+
+  /* Submenu panel — shrink to fit content */
+  html body #solutionsDropdown .solutions-single-col .mega-submenu {
+    width: max-content !important;
+    min-width: 0 !important;
+    max-width: 260px !important;
+    padding: 6px !important;
+  }
+
+  /* Submenu items — tight, no extra width */
+  html body #solutionsDropdown .solutions-single-col .mega-subitem {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 8px 12px !important;
+    white-space: nowrap !important;
+  }
+
+  html body #solutionsDropdown .solutions-single-col .mega-subitem strong {
+    font-size: 0.85rem !important;
+    white-space: nowrap !important;
+  }
+}
+/* =============================================
+   INDUSTRIES MENU — Single Column (like Solutions)
+   ============================================= */
+
+/* html body #industriesDropdown {
+  position: relative !important;
+}
+
+html body #industriesDropdown .industries-mega-menu {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: max-content !important;
+  min-width: 240px !important;
+  max-width: 320px !important;
+  padding: 8px !important;
+  margin: 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(12px) !important;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s !important;
+  z-index: 9999 !important;
+  display: block !important;
+}
+
+html body #industriesDropdown:hover .industries-mega-menu,
+html body #industriesDropdown.open .industries-mega-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+html body #industriesDropdown .industries-single-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  width: 100% !important;
+}
+
+html body #industriesDropdown .industries-single-col > .mega-item,
+html body #industriesDropdown .industries-single-col > .mega-item-wrapper > .mega-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding: 10px 14px !important;
+  margin: 0 !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  color: #1e293b !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+html body #industriesDropdown .industries-single-col .mega-item strong {
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: inherit !important;
+}
+
+html body #industriesDropdown .industries-single-col .mega-item:hover,
+html body #industriesDropdown .industries-single-col .mega-item:hover strong {
+  background: var(--accent-soft) !important;
+  color: var(--accent) !important;
+}
+
+html body #industriesDropdown .industries-single-col .mega-item-wrapper {
+  position: relative !important;
+  width: 100% !important;
+}
+
+html body #industriesDropdown .industries-single-col .submenu-arrow {
+  margin-left: auto !important;
+  font-size: 1.1rem !important;
+  color: #94a3b8 !important;
+  flex-shrink: 0 !important;
+}
+
+html body #industriesDropdown .industries-single-col .mega-item-wrapper:hover .submenu-arrow {
+  color: var(--accent) !important;
+}
+
+html body #industriesDropdown .industries-single-col .mega-submenu {
+  position: absolute !important;
+  top: 0 !important;
+  left: 100% !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin-left: 8px !important;
+  width: max-content !important;
+  min-width: 0 !important;
+  max-width: 260px !important;
+  padding: 6px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateX(-8px) !important;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s !important;
+  z-index: 10000 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+html body #industriesDropdown .industries-single-col .mega-item-wrapper:hover .mega-submenu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(0) !important;
+}
+
+html body #industriesDropdown .industries-single-col .mega-subitem {
+  display: block !important;
+  padding: 8px 12px !important;
+  margin: 0 !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: #1e293b !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+html body #industriesDropdown .industries-single-col .mega-subitem strong {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: inherit !important;
+}
+
+html body #industriesDropdown .industries-single-col .mega-subitem:hover,
+html body #industriesDropdown .industries-single-col .mega-subitem:hover strong {
+  background: var(--accent-soft) !important;
+  color: var(--accent) !important;
+} */
+
+/* =============================================
+   MOBILE — Full width stack
+   ============================================= */
+
+/* @media (max-width: 968px) {
+
+  html body #industriesDropdown .industries-mega-menu {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 0 8px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: none;
+  }
+
+  html body #industriesDropdown.open .industries-mega-menu {
+    display: block !important;
+  }
+
+  html body #industriesDropdown .industries-single-col {
+    width: 100% !important;
+  }
+
+  html body #industriesDropdown .industries-single-col > .mega-item,
+  html body #industriesDropdown .industries-single-col > .mega-item-wrapper > .mega-item {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    white-space: normal !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
+  }
+
+  html body #industriesDropdown .industries-single-col .submenu-arrow {
+    display: block !important;
+    transform: rotate(0deg) !important;
+  }
+
+  html body #industriesDropdown .industries-single-col .mega-item-wrapper.open .submenu-arrow {
+    transform: rotate(90deg) !important;
+    color: var(--accent) !important;
+  }
+
+  html body #industriesDropdown .industries-single-col .mega-submenu {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin: 4px 0 !important;
+    padding: 6px 0 6px 12px !important;
+    background: rgba(0, 0, 0, 0.02) !important;
+    border: none !important;
+    border-left: 2px solid var(--accent) !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: none;
+  }
+
+  html body #industriesDropdown .industries-single-col .mega-item-wrapper.open .mega-submenu {
+    display: block !important;
+  }
+} */
+/* =============================================
+   SOLUTIONS MENU — MOBILE FIX
+   ============================================= */
+
+@media (max-width: 968px) {
+
+  /* Force the menu to be hidden by default */
+  html body #solutionsDropdown .solutions-mega-menu {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+
+    padding: 0 0 8px !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    /* CRITICAL: hidden by default */
+    display: none !important;
+  }
+
+  /* Only show when parent dropdown has .open */
+  html body #solutionsDropdown.open .solutions-mega-menu {
+    display: block !important;
+  }
+
+  /* The single column container */
+  html body #solutionsDropdown .solutions-single-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    width: 100% !important;
+  }
+
+  /* Each item */
+  html body #solutionsDropdown .solutions-single-col > .mega-item,
+  html body #solutionsDropdown .solutions-single-col > .mega-item-wrapper > .mega-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+    padding: 12px 16px !important;
+    margin: 0 !important;
+
+    font-size: 0.92rem !important;
+    color: #1e293b !important;
+    text-decoration: none !important;
+
+    white-space: normal !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
+  }
+
+  /* Arrow — always visible on mobile, rotates when submenu opens */
+  html body #solutionsDropdown .solutions-single-col .submenu-arrow {
+    display: block !important;
+    margin-left: auto !important;
+    font-size: 1.1rem !important;
+    color: #94a3b8 !important;
+    transform: rotate(0deg) !important;
+    transition: transform 0.25s ease, color 0.25s ease !important;
+    flex-shrink: 0 !important;
+  }
+
+  html body #solutionsDropdown .solutions-single-col .mega-item-wrapper.open .submenu-arrow {
+    transform: rotate(90deg) !important;
+    color: var(--accent) !important;
+  }
+
+  /* Submenu — hidden by default on mobile */
+  html body #solutionsDropdown .solutions-single-col .mega-submenu {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 4px 0 !important;
+    padding: 6px 0 6px 12px !important;
+
+    background: rgba(0, 0, 0, 0.02) !important;
+    border: none !important;
+    border-left: 2px solid var(--accent) !important;
+    box-shadow: none !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    /* CRITICAL: hidden by default */
+    display: none !important;
+  }
+
+  /* Only show when wrapper has .open */
+  html body #solutionsDropdown .solutions-single-col .mega-item-wrapper.open .mega-submenu {
+    display: block !important;
+  }
+
+  /* Submenu items */
+  html body #solutionsDropdown .solutions-single-col .mega-subitem {
+    display: block !important;
+    width: 100% !important;
+    padding: 10px 14px !important;
+    margin: 0 !important;
+    font-size: 0.88rem !important;
+    color: #1e293b !important;
+    text-decoration: none !important;
+    border-radius: 6px !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+  }
+
+  html body #solutionsDropdown .solutions-single-col .mega-subitem:hover {
+    background: var(--accent-soft) !important;
+    color: var(--accent) !important;
+  }
+}
+/* =============================================
+   FORCE HIDE on mobile — until JS says open
+   ============================================= */
+
+@media (max-width: 968px) {
+
+  body.mobile-view #solutionsDropdown .js-solutions-menu {
+    display: none !important;
+  }
+
+  body.mobile-view #solutionsDropdown.is-open .js-solutions-menu {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  body.mobile-view #solutionsDropdown .mega-submenu {
+    display: none !important;
+  }
+
+  body.mobile-view #solutionsDropdown .mega-item-wrapper.is-submenu-open > .mega-submenu {
+    display: block !important;
+  }
+}
+/* =============================================
+   INDUSTRIES DROPDOWN — FINAL CSS
+   (Single source of truth, desktop + mobile)
+   ============================================= */
+
+/* ---------- DESKTOP ---------- */
+@media (min-width: 969px) {
+
+  #industriesDropdown {
+    position: relative;
+  }
+
+  #industriesDropdown .industries-mega-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: max-content;
+    min-width: 240px;
+    max-width: 320px;
+    padding: 8px;
+    margin: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 200;
+  }
+
+  #industriesDropdown:hover .industries-mega-menu,
+  #industriesDropdown.open .industries-mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  #industriesDropdown .industries-single-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+  }
+
+  #industriesDropdown .industries-single-col .mega-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 14px;
+    margin: 0;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #1e293b;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  #industriesDropdown .industries-single-col .mega-item:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  #industriesDropdown .industries-single-col .mega-item-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  #industriesDropdown .industries-single-col .submenu-arrow {
+    margin-left: auto;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    transition: color 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  #industriesDropdown .industries-single-col .mega-item-wrapper:hover .submenu-arrow {
+    color: var(--accent);
+  }
+
+  /* Submenu — opens to the right */
+  #industriesDropdown .industries-single-col .mega-submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 8px;
+    width: max-content;
+    min-width: 0;
+    max-width: 260px;
+    padding: 6px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  #industriesDropdown .industries-single-col .mega-item-wrapper:hover .mega-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  #industriesDropdown .industries-single-col .mega-subitem {
+    display: block;
+    padding: 8px 12px;
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1e293b;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  #industriesDropdown .industries-single-col .mega-subitem:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+}
+
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 968px) {
+
+  #industriesDropdown {
+    width: 100%;
+  }
+
+  /* Hide by default on mobile */
+  #industriesDropdown .industries-mega-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 0 8px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: none;
+  }
+
+  #industriesDropdown.open .industries-mega-menu {
+    display: block;
+  }
+
+  #industriesDropdown .industries-single-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+  }
+
+  #industriesDropdown .industries-single-col .mega-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 16px;
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #1e293b;
+    text-decoration: none;
+    white-space: normal;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 0;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  #industriesDropdown .industries-single-col .mega-item:last-child {
+    border-bottom: none;
+  }
+
+  #industriesDropdown .industries-single-col .mega-item:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  #industriesDropdown .industries-single-col .submenu-arrow {
+    margin-left: auto;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    transform: rotate(0deg);
+    transition: transform 0.25s ease, color 0.25s ease;
+    flex-shrink: 0;
+  }
+
+  #industriesDropdown .industries-single-col .mega-item-wrapper.open .submenu-arrow {
+    transform: rotate(90deg);
+    color: var(--accent);
+  }
+
+  /* Submenu — hidden by default on mobile */
+  #industriesDropdown .industries-single-col .mega-submenu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin: 4px 0 !important;
+    padding: 6px 0 6px 12px !important;
+    background: rgba(0, 0, 0, 0.02) !important;
+    border: none !important;
+    border-left: 2px solid var(--accent) !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: none;
+  }
+
+  #industriesDropdown .industries-single-col .mega-item-wrapper.open > .mega-submenu {
+    display: block;
+  }
+
+  #industriesDropdown .industries-single-col .mega-subitem {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    margin: 0;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #1e293b;
+    text-decoration: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+    white-space: normal;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  #industriesDropdown .industries-single-col .mega-subitem:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+}
+/* =============================================
+   MOBILE — single dropdown open at a time
+   ============================================= */
+
+/* @media (max-width: 968px) { */
+/* 
+  #solutionsDropdown .solutions-mega-menu,
+  #industriesDropdown .industries-mega-menu,
+  #companyDropdown .mega-menu {
+    display: none !important;
+    position: static !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 0 8px !important;
+    margin: 0 !important;
+  } */
+
+  /* #solutionsDropdown.open .solutions-mega-menu,
+  #industriesDropdown.open .industries-mega-menu,
+  #companyDropdown.open .mega-menu {
+    display: block !important;
+  }
+
+  #solutionsDropdown .mega-submenu,
+  #industriesDropdown .mega-submenu {
+    display: none !important;
+  } */
+
+  /* #solutionsDropdown .mega-item-wrapper.open > .mega-submenu,
+  #industriesDropdown .mega-item-wrapper.open > .mega-submenu {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 4px 0 !important;
+    padding: 6px 0 6px 12px !important;
+    background: rgba(0, 0, 0, 0.02) !important;
+    border: none !important;
+    border-left: 2px solid var(--accent) !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  } */
+/* } */
+/* =============================================
+   MOBILE — submenu open state
+   ============================================= */
+
+@media (max-width: 968px) {
+  #solutionsDropdown .mega-item-wrapper.open > .mega-submenu,
+  #industriesDropdown .mega-item-wrapper.open > .mega-submenu {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 4px 0 !important;
+    padding: 6px 0 6px 12px !important;
+    background: rgba(0, 0, 0, 0.02) !important;
+    border: none !important;
+    /* border-left: 2px solid var(--accent) !important; */
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}
+/* =============================================
+   CTA SECTION — Generic Reusable Block
+   ============================================= */
+
+.cta-section {
+  padding: 80px 0;
+  background: #ffffff;
+  position: relative;
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  color: #0b1a2f;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 60px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+/* Primary button — solid fill */
+.cta-btn-primary {
+  background: var(--accent, #5b7fa6);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(91, 127, 166, 0.3);
+}
+
+.cta-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(91, 127, 166, 0.45);
+  background: var(--accent-light, #7b9ec4);
+}
+
+/* Outline-light button — bordered */
+.cta-btn-outline-light {
+  background: transparent;
+  border: 2px solid var(--accent, #5b7fa6);
+  color: var(--accent, #5b7fa6);
+}
+
+.cta-btn-outline-light:hover {
+  background: var(--accent, #5b7fa6);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+
+@media (max-width: 968px) {
+  .cta-section {
+    padding: 60px 0;
+  }
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+  .cta-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta-section {
+    padding: 48px 0;
+  }
+  .cta-content h2 {
+    font-size: 1.5rem;
+  }
+  .cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-btn {
+    width: 100%;
+    text-align: center;
   }
 }
