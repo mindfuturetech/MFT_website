@@ -504,7 +504,7 @@ function initHeroSlider() {
 
   let currentSlide = 0;
   let slideInterval;
-  const slideDelay = 5000;
+  const slideDelay = 5010;
 
   function goToSlide(index) {
     slides.forEach((slide, i) => {

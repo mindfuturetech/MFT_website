@@ -1617,7 +1617,7 @@ body {
 
 /* Paragraphs - comfortable reading width */
 .about-text > p {
-  max-width: 1000px;
+  /* max-width: 1000px; */
   color: #475569;
   font-size: 1rem;
   line-height: 1.75;
