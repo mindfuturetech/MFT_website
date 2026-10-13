@@ -3,6 +3,7 @@
 // =============================================
 
 require('dotenv').config();
+console.log('RESEND_API_KEY loaded:', process.env.RESEND_API_KEY ? 'YES (' + process.env.RESEND_API_KEY.substring(0, 10) + '...)' : 'NO');
 
 const express = require('express');
 const cors = require('cors');

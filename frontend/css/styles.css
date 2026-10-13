@@ -2757,9 +2757,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-  background: #fff;
+  width: 140px;
+  height: 140px;
+  /* background: transparent !important; */
+  background: linear-gradient(135deg, rgba(91, 127, 166, 0.15), rgba(255, 183, 120, 0.2));
   border-radius: 50%;
   display: flex;
   align-items: center;
