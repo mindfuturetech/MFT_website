@@ -3,14 +3,16 @@
 // =============================================
 
 require('dotenv').config();
+console.log('RESEND_API_KEY loaded:', process.env.RESEND_API_KEY ? 'YES (' + process.env.RESEND_API_KEY.substring(0, 10) + '...)' : 'NO');
 
 const express = require('express');
 const cors = require('cors');
+const connectDB = require("./config/db.config");
 
 const formRoute = require('./routes/form');
-
+const chatbot = require("./routes/chatbot.routes");
 const app = express();
-
+connectDB();
 // ---- Middleware ----
 app.use(cors());
 app.use(express.json());
@@ -29,6 +31,7 @@ app.get('/', (req, res) => {
 
 // ---- Routes ----
 app.use('/api', formRoute);       // POST /api/submit
+app.use("/api/v1/chatbot", chatbot); // POST /api/v1/chatbot/leads
 
 // ---- 404 handler ----
 app.use((req, res) => {

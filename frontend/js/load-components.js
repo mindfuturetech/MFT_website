@@ -604,15 +604,15 @@ function initHeroSlider() {
       e.stopImmediatePropagation();
 
       const dropdown = toggleBtn.parentElement;
-      const wasOpen = dropdown.classList.contains('open');
+      const wasOpen = dropdown.classList.contains("open");
 
       // Close EVERYTHING first
       closeEverything();
 
       // If it wasn't open before, open it now
       if (!wasOpen) {
-        dropdown.classList.add('open');
-        toggleBtn.setAttribute('aria-expanded', 'true');
+        dropdown.classList.add("open");
+        toggleBtn.setAttribute("aria-expanded", "true");
       }
 
       return;
@@ -626,32 +626,44 @@ function initHeroSlider() {
       e.stopPropagation();
       e.stopImmediatePropagation();
 
-      const wrapper = submenuLink.closest('.mega-item-wrapper');
-      const wasOpen = wrapper.classList.contains('open');
+      const wrapper = submenuLink.closest(".mega-item-wrapper");
+      const wasOpen = wrapper.classList.contains("open");
 
       // Close all OTHER submenus (keep parent dropdown open)
-      document.querySelectorAll('.mega-item-wrapper.has-submenu').forEach(w => {
+      document.querySelectorAll('.mega-item-wrapper.has-submenu').forEach((w) => {
         if (w !== wrapper) w.classList.remove('open');
       });
 
       // Toggle this submenu
-      wrapper.classList.toggle('open', !wasOpen);
+      wrapper.classList.toggle("open", !wasOpen);
 
       return;
     }
 
     // ---- Case 3: User tapped outside the menu ----
-    if (!e.target.closest('.nav-links')) {
+    if (!e.target.closest(".nav-links")) {
       closeEverything();
     }
 
   }, true);
 
   // Reset when resizing to desktop
-  window.addEventListener('resize', function () {
+  window.addEventListener("resize", function () {
     if (!isMobile()) {
       closeEverything();
     }
-  });
+  })})();
 
+// =============================================
+// CHATBOT — loads the floating assistant on every page
+// Needs: js/chatbot.js and css/chatbot.css (chatbot.js loads the css itself)
+// =============================================
+(function () {
+  var inSubfolder = /\/(industries|solutions)\//.test(window.location.pathname);
+  var base = inSubfolder ? "../" : "";
+
+  var script = document.createElement("script");
+  script.src = base + "js/chatbot.js";
+  script.defer = true;
+  document.body.appendChild(script);
 })();
