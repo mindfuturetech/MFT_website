@@ -19,7 +19,7 @@
 
   var CONFIG = Object.assign(
     {
-      apiUrl: "http://localhost:5000/api/v1/chatbot/leads",
+      apiUrl: "https://mft.mindfuturetechsupport.com/api/v1/chatbot/leads",
       botName: "MFT Assistant",
       defaultCountryCode: "+91",
       teaserText: "Hi! 👋 Need any help?",
