@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+.package-lock.json
+frontend.zip
+backend.zip
+build
+.env
