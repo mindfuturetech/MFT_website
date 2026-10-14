@@ -22,7 +22,7 @@
       apiUrl: "https://mft.mindfuturetechsupport.com/api/v1/chatbot/leads",
       botName: "MFT Assistant",
       defaultCountryCode: "+91",
-      teaserText: "Hi! 👋 Need any help?",
+      teaserText: "Hi! I'm Mindi👋, Need any help?",
       teaserDelayMs: 4000,
       requestTimeoutMs: 15000,
     },
