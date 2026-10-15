@@ -392,9 +392,9 @@ body {
   animation-duration: 8s;
 }
 
-.deco-ring {
+/* .deco-ring {
   transform-origin: center;
-}
+} */
 
 /* Product icon hover */
 .product-card:hover .product-icon {
