@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Policy | Mindfuturetech</title>
+  <meta name="description" content="Cookie Policy for Mindfuturetech. Learn what cookies we use and how to control them." />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.7;
+      color: #2d2d2d;
+      background: #f7f8fa;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================================================
+       COOKIE BANNER
+       ============================================================ */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      max-width: 620px;
+      background: #ffffff;
+      color: #333;
+      padding: 22px 24px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+      display: none;
+      z-index: 9999;
+    }
+    .cookie-banner.show { display: block; }
+
+    .cookie-banner h3 {
+      font-size: 1.05rem;
+      color: #0d1b2a;
+      margin-bottom: 8px;
+    }
+
+    .cookie-text {
+      margin: 0 0 18px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #4a5568;
+    }
+    .cookie-text a {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    .cookie-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .cookie-btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .cookie-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .cookie-btn-accept {
+      background: #0066cc;
+      color: #fff;
+    }
+    .cookie-btn-reject {
+      background: #ffffff;
+      color: #333;
+      border-color: #d1d8e0;
+    }
+    .cookie-btn-customize {
+      background: transparent;
+      color: #0066cc;
+      border-color: #0066cc;
+    }
+
+    /* ============================================================
+       CUSTOMIZE MODAL
+       ============================================================ */
+    .cookie-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .cookie-modal-overlay.show { display: flex; }
+
+    .cookie-modal {
+      background: #fff;
+      width: 100%;
+      max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 14px;
+      padding: 28px 26px 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: modalIn 0.25s ease;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .cookie-modal h2 {
+      font-size: 1.25rem;
+      color: #0d1b2a;
+      margin-bottom: 6px;
+    }
+
+    .cookie-modal-sub {
+      font-size: 0.88rem;
+      color: #6b7684;
+      margin-bottom: 22px;
+    }
+
+    .cookie-category {
+      border: 1px solid #eef1f4;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .cookie-category-text { flex: 1; }
+    .cookie-category-text h4 {
+      font-size: 0.98rem;
+      color: #0d1b2a;
+      margin-bottom: 4px;
+    }
+    .cookie-category-text p {
+      font-size: 0.85rem;
+      color: #6b7684;
+      line-height: 1.5;
+    }
+
+    /* Toggle switch */
+    .toggle-switch {
+      position: relative;
+      width: 46px;
+      height: 26px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .toggle-slider {
+      position: absolute;
+      inset: 0;
+      background: #cbd5e0;
+      border-radius: 26px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .toggle-slider::before {
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      top: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+    .toggle-switch input:checked + .toggle-slider {
+      background: #0066cc;
+    }
+    .toggle-switch input:checked + .toggle-slider::before {
+      transform: translateX(20px);
+    }
+    .toggle-switch input:disabled + .toggle-slider {
+      background: #a0aec0;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    .cookie-modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       PAGE STYLES
+       ============================================================ */
+    .cp-header {
+      background: #0d1b2a;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .cp-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    .cp-header p  { font-size: 0.95rem; color: #c7d0da; }
+
+    .cp-container {
+      max-width: 860px;
+      margin: -24px auto 60px;
+      background: #fff;
+      padding: 48px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .cp-container h2 {
+      font-size: 1.3rem;
+      color: #0d1b2a;
+      margin: 32px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #eef1f4;
+    }
+    .cp-container h2:first-of-type { margin-top: 0; }
+
+    .cp-container h3 {
+      font-size: 1.05rem;
+      color: #1c2e44;
+      margin: 20px 0 8px;
+    }
+
+    .cp-container p {
+      margin-bottom: 14px;
+      color: #4a5568;
+      font-size: 0.97rem;
+    }
+
+    .cp-container ul {
+      margin: 10px 0 16px 22px;
+      color: #4a5568;
+      font-size: 0.97rem;
+    }
+    .cp-container ul li { margin-bottom: 6px; }
+
+    .cp-container a {
+      color: #0066cc;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 102, 204, 0.3);
+    }
+    .cp-container a:hover { border-bottom-color: #0066cc; }
+
+    .cp-meta {
+      background: #f0f4f8;
+      border-left: 4px solid #0066cc;
+      padding: 14px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #3d4d5c;
+      margin-bottom: 28px;
+    }
+
+    .cp-table-wrap { overflow-x: auto; margin: 16px 0 24px; }
+    .cp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 520px;
+    }
+    .cp-table th,
+    .cp-table td {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid #eef1f4;
+      color: #4a5568;
+    }
+    .cp-table th {
+      background: #f0f4f8;
+      color: #0d1b2a;
+      font-weight: 600;
+    }
+    .cp-table tr:last-child td { border-bottom: none; }
+
+    .cp-contact {
+      background: #f0f4f8;
+      padding: 22px 24px;
+      border-radius: 10px;
+      margin-top: 32px;
+    }
+    .cp-contact h2 { border: none; margin-top: 0; padding: 0; font-size: 1.15rem; }
+    .cp-contact p  { margin-bottom: 6px; }
+
+    .cp-back {
+      display: inline-block;
+      margin: 24px 0 0;
+      font-size: 0.9rem;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .cp-back:hover { text-decoration: underline; }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 640px) {
+      .cp-header { padding: 36px 18px 32px; }
+      .cp-header h1 { font-size: 1.5rem; }
+      .cp-container { margin: -16px 12px 40px; padding: 28px 20px; }
+      .cp-container h2 { font-size: 1.15rem; }
+      .cookie-banner { left: 10px; right: 10px; bottom: 10px; padding: 16px; }
+      .cookie-buttons { flex-direction: column-reverse; }
+      .cookie-btn { width: 100%; text-align: center; }
+      .cookie-modal { padding: 22px 18px; }
+      .cookie-modal-actions { flex-direction: column-reverse; }
+      .cookie-modal-actions .cookie-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="cp-header">
+    <h1>Cookie Policy</h1>
+    <p>Last updated: October 15, 2026</p>
+  </header>
+
+  <!-- ============ CONTENT ============ -->
+  <main class="cp-container">
+
+    <div class="cp-meta">
+      <strong>In short:</strong> We use cookies to personalize content and improve performance.
+      You can accept, reject, or customize which cookie categories we use. Change your choice
+      anytime via the banner below or in your browser settings.
+    </div>
+
+    <h2>1. What Are Cookies?</h2>
+    <p>
+      Cookies are small text files stored on your device when you visit a website. They help
+      the site remember your actions and preferences over time, so you don't have to re-enter
+      them each time you return.
+    </p>
+    <p>
+      We also use similar technologies such as <strong>local storage</strong>, <strong>pixels</strong>,
+      and <strong>web beacons</strong>. For simplicity, all of these are referred to as "cookies"
+      in this policy.
+    </p>
+
+    <h2>2. How We Use Cookies</h2>
+    <ul>
+      <li>Remember your cookie consent choice</li>
+      <li>Personalize content and remember your preferences</li>
+      <li>Understand how visitors use our site so we can improve it</li>
+      <li>Measure the performance of our pages and features</li>
+      <li>Keep our website secure and prevent fraud</li>
+    </ul>
+
+    <h2>3. Types of Cookies We Use</h2>
+
+    <h3>a. Strictly Necessary Cookies</h3>
+    <p>
+      Essential for the website to function and cannot be switched off. They are usually set
+      in response to actions you take, such as setting your cookie preferences.
+    </p>
+
+    <h3>b. Performance &amp; Analytics Cookies</h3>
+    <p>
+      These help us understand how visitors interact with our site by collecting anonymous
+      information. They are only set if you click <strong>Allow all</strong> or enable them in
+      <strong>Customize</strong>.
+    </p>
+
+    <h3>c. Functionality Cookies</h3>
+    <p>
+      These allow the site to remember choices you make (like your language or region) to
+      provide a more personalized experience.
+    </p>
+
+    <h3>d. Marketing Cookies</h3>
+    <p>
+      These may be set by our advertising partners to build a profile of your interests and
+      show relevant ads on other sites. They are only set with your consent.
+    </p>
+
+    <h2>4. Cookies We Set</h2>
+    <div class="cp-table-wrap">
+      <table class="cp-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Purpose</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>cookieConsent</td>
+            <td>Necessary</td>
+            <td>Stores your cookie banner choice</td>
+            <td>Persistent (localStorage)</td>
+          </tr>
+          <tr>
+            <td>_ga</td>
+            <td>Analytics</td>
+            <td>Google Analytics — distinguishes unique users</td>
+            <td>2 years</td>
+          </tr>
+          <tr>
+            <td>_gid</td>
+            <td>Analytics</td>
+            <td>Google Analytics — distinguishes users for 24 hours</td>
+            <td>24 hours</td>
+          </tr>
+          <tr>
+            <td>session_id</td>
+            <td>Functionality</td>
+            <td>Keeps you logged in / remembers your session</td>
+            <td>Session</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><em>Note: This list may be updated as we add or remove services. Check back periodically.</em></p>
+
+    <h2>5. Third-Party Cookies</h2>
+    <ul>
+      <li><strong>Google Analytics</strong> — traffic analysis</li>
+      <li><strong>Google Maps</strong> — embedded maps</li>
+      <li><strong>Social media plugins</strong> — sharing buttons</li>
+    </ul>
+
+    <h2>6. Managing Your Cookie Preferences</h2>
+
+    <h3>a. Our cookie banner</h3>
+    <p>
+      When you first visit, a banner appears with three options:
+      <strong>Reject all</strong>, <strong>Accept all</strong>, and <strong>Customize</strong>.
+      Your choice is saved and remembered on future visits. You can also re-open the banner
+      by visiting this page.
+    </p>
+
+    <h3>b. Browser settings</h3>
+    <p>You can block or delete cookies through your browser:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+    </ul>
+
+    <h3>c. Opt out of analytics</h3>
+    <p>
+      You can install the
+      <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>
+      to prevent your data from being used by Google Analytics.
+    </p>
+
+    <p>
+      <strong>Note:</strong> Disabling certain cookies may affect how the website functions.
+      Strictly necessary cookies cannot be disabled through our banner.
+    </p>
+
+    <h2>7. Changes to This Cookie Policy</h2>
+    <p>
+      We may update this Cookie Policy from time to time. Any updates will be posted on this
+      page with a revised "Last updated" date.
+    </p>
+
+    <h2>8. More Information</h2>
+    <p>
+      For details on how we handle personal data more broadly, please see our
+      <a href="privacy-policy.html">Privacy Policy</a> and
+      <a href="terms-of-service.html">Terms of Service</a>.
+    </p>
+
+    <div class="cp-contact">
+      <h2>9. Contact Us</h2>
+      <p>If you have any questions about our use of cookies, please contact us:</p>
+      <p><strong>Email:</strong> <a href="mailto:privacy@mindfuturetech.com">privacy@mindfuturetech.com</a></p>
+      <p><strong>Website:</strong> <a href="contact.html">Contact page</a></p>
+    </div>
+
+    <a href="index.html" class="cp-back">← Back to Home</a>
+  </main>
+
+  <!-- ============================================================
+       COOKIE BANNER (3 BUTTONS)
+       ============================================================ -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <h3>We value your privacy</h3>
+    <p class="cookie-text">
+      Our site uses cookies. Cookies help us personalize content and improve performance.
+      Learn how in our <a href="cookie-policy.html">Cookie Policy</a>.
+    </p>
+    <div class="cookie-buttons">
+      <button id="cookie-reject"    class="cookie-btn cookie-btn-reject">Reject all</button>
+      <button id="cookie-customize" class="cookie-btn cookie-btn-customize">Customize</button>
+      <button id="cookie-accept"    class="cookie-btn cookie-btn-accept">Accept all</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CUSTOMIZE MODAL
+       ============================================================ -->
+  <div id="cookie-modal" class="cookie-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+    <div class="cookie-modal">
+      <h2 id="cookie-modal-title">Customize your cookie preferences</h2>
+      <p class="cookie-modal-sub">
+        Choose which categories of cookies you allow. Strictly necessary cookies are always on.
+      </p>
+
+      <!-- Necessary (always on) -->
+      <div class="cookie-category">
+        <div class="cookie-category-text">
+          <h4>Strictly Necessary</h4>
+          <p>Required for the website to function. These cannot be disabled.</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" checked disabled>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- Analytics -->
+      <div class="cookie-category">
+        <div class="cookie-category-text">
+          <h4>Analytics</h4>
+          <p>Help us understand how visitors use the site so we can improve it.</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="pref-analytics">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- Functionality -->
+      <div class="cookie-category">
+        <div class="cookie-category-text">
+          <h4>Functionality</h4>
+          <p>Remember your choices (language, region) for a better experience.</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="pref-functionality">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- Marketing -->
+      <div class="cookie-category">
+        <div class="cookie-category-text">
+          <h4>Marketing</h4>
+          <p>Used to show you relevant ads on other sites.</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="pref-marketing">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-modal-actions">
+        <button id="modal-cancel" class="cookie-btn cookie-btn-reject">Cancel</button>
+        <button id="modal-save"   class="cookie-btn cookie-btn-accept">Save preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPT
+       ============================================================ -->
+  <script>
+    (function () {
+      /* ---------- Elements ---------- */
+      const banner       = document.getElementById('cookie-banner');
+      const modal        = document.getElementById('cookie-modal');
+      const acceptBtn    = document.getElementById('cookie-accept');
+      const rejectBtn    = document.getElementById('cookie-reject');
+      const customizeBtn = document.getElementById('cookie-customize');
+      const cancelBtn    = document.getElementById('modal-cancel');
+      const saveBtn      = document.getElementById('modal-save');
+
+      const prefs = {
+        analytics:     document.getElementById('pref-analytics'),
+        functionality: document.getElementById('pref-functionality'),
+        marketing:     document.getElementById('pref-marketing')
+      };
+
+      const STORAGE_KEY = 'cookieConsent';
+
+      /* ---------- 1. Show banner on this page ---------- */
+      // Always show on the cookie-policy page so users can review/change.
+      const saved = localStorage.getItem(STORAGE_KEY);
+
+      // Load previous preferences into the modal toggles
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (parsed.analytics     !== undefined) prefs.analytics.checked     = parsed.analytics;
+          if (parsed.functionality !== undefined) prefs.functionality.checked = parsed.functionality;
+          if (parsed.marketing     !== undefined) prefs.marketing.checked     = parsed.marketing;
+        } catch (e) { /* ignore legacy string format */ }
+      }
+
+      // Show the banner after a short delay
+      setTimeout(() => banner.classList.add('show'), 400);
+
+      /* ---------- 2. Helper: save & hide ---------- */
+      function saveConsent(obj) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+        banner.classList.remove('show');
+        modal.classList.remove('show');
+        applyConsent(obj);
+      }
+
+      /* ---------- 3. Accept all ---------- */
+      acceptBtn.addEventListener('click', () => {
+        saveConsent({ analytics: true, functionality: true, marketing: true });
+      });
+
+      /* ---------- 4. Reject all ---------- */
+      rejectBtn.addEventListener('click', () => {
+        saveConsent({ analytics: false, functionality: false, marketing: false });
+      });
+
+      /* ---------- 5. Open customize modal ---------- */
+      customizeBtn.addEventListener('click', () => {
+        modal.classList.add('show');
+      });
+
+      /* ---------- 6. Cancel customize ---------- */
+      cancelBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+      });
+
+      /* ---------- 7. Save custom preferences ---------- */
+      saveBtn.addEventListener('click', () => {
+        saveConsent({
+          analytics:     prefs.analytics.checked,
+          functionality: prefs.functionality.checked,
+          marketing:     prefs.marketing.checked
+        });
+      });
+
+      /* ---------- 8. Close modal by clicking outside ---------- */
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('show');
+      });
+
+      /* ---------- 9. Apply consent (hook your scripts here) ---------- */
+      function applyConsent(choice) {
+        console.log('Cookie consent saved:', choice);
+
+        if (choice.analytics) {
+          // e.g. loadGoogleAnalytics();
+        }
+        if (choice.functionality) {
+          // e.g. loadPreferenceCookies();
+        }
+        if (choice.marketing) {
+          // e.g. loadMarketingPixels();
+        }
+      }
+
+      // If a saved choice exists, apply it silently on load
+      if (saved) {
+        try { applyConsent(JSON.parse(saved)); } catch (e) {}
+      }
+    })();
+  </script>
+
+</body>
+</html>
