@@ -2617,14 +2617,14 @@ body {
   animation-delay: -2s;
 }
 
-.pill-digital {
+/* .pill-digital {
   background: linear-gradient(135deg, rgba(112, 104, 218, 0.15), rgba(176, 136, 90, 0.2));
   color: var(--auto-bright);
   border: 1px solid rgba(102, 50, 213, 0.3);
   animation-delay: -3s;
-}
+} */
 
-/*.pill-digital {
+.pill-digital {
 
   background: linear-gradient(
     135deg,
@@ -2637,7 +2637,7 @@ body {
   border: 1px solid rgba(0, 174, 255, 0.55);
 
   animation-delay: -3s;
-}*/
+}
 
 .hero-actions {
   display: flex;
