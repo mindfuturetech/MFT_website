@@ -3,211 +3,309 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy Policy - Mindfuturetech" />
-  <title>Privacy Policy · Mindfuturetech</title>
-  <link rel="icon" type="image/jpeg" href="assets/images/mftsymbol.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/animations.css" />
+  <title>Privacy Policy | Mindfuturetech Systems</title>
+  <meta name="description" content="Privacy Policy for Mindfuturetech Systems — a software development company. Learn how we collect, use, and protect your information." />
+
   <style>
-    .legal-page {
-      background: #f8fafc;
-      padding: 60px 0 80px;
-      margin-top: 84px;
-    }
-    .legal-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .legal-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .legal-header h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      color: #0b1a2f;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .legal-header p {
-      color: #64748b;
-      font-size: 0.95rem;
-    }
-    .legal-card {
-      background: #ffffff;
-      border-radius: 20px;
-      border: 1px solid #e2e8f0;
-      padding: 48px 44px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    }
-    .legal-card h2 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #0b1a2f;
-      margin: 32px 0 14px;
-      letter-spacing: -0.01em;
-    }
-    .legal-card h2:first-child {
-      margin-top: 0;
-    }
-    .legal-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #0b1a2f;
-      margin: 22px 0 10px;
-    }
-    .legal-card p {
-      color: #475569;
-      font-size: 0.95rem;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.75;
+      color: #2d2d2d;
+      background: #f7f8fa;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- Header ---------- */
+    .pp-header {
+      background: #0d1b2a;
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .pp-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    .pp-header p  { font-size: 0.95rem; color: #c7d0da; }
+
+    /* ---------- Container ---------- */
+    .pp-container {
+      max-width: 860px;
+      margin: -32px auto 60px;
+      background: #fff;
+      padding: 48px 44px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    /* ---------- Typography ---------- */
+    .pp-container h2 {
+      font-size: 1.25rem;
+      color: #0d1b2a;
+      margin: 34px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #eef1f4;
+    }
+    .pp-container h2:first-of-type { margin-top: 0; }
+
+    .pp-container p {
       margin-bottom: 14px;
+      color: #4a5568;
+      font-size: 0.97rem;
     }
-    .legal-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 12px 0 18px;
+
+    .pp-container ul {
+      margin: 10px 0 16px 22px;
+      color: #4a5568;
+      font-size: 0.97rem;
     }
-    .legal-card ul li {
-      position: relative;
-      padding: 6px 0 6px 24px;
-      color: #475569;
-      font-size: 0.93rem;
-      line-height: 1.6;
-    }
-    .legal-card ul li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      top: 5px;
-      color: #f5b041;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    .legal-card a {
-      color: #5b7fa6;
+    .pp-container ul li { margin-bottom: 6px; }
+
+    .pp-container a {
+      color: #0066cc;
       text-decoration: none;
-      font-weight: 500;
+      border-bottom: 1px solid rgba(0, 102, 204, 0.3);
     }
-    .legal-card a:hover {
-      text-decoration: underline;
+    .pp-container a:hover { border-bottom-color: #0066cc; }
+
+    /* ---------- Meta box ---------- */
+    .pp-meta {
+      background: #f0f4f8;
+      border-left: 4px solid #0066cc;
+      padding: 14px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #3d4d5c;
+      margin-bottom: 28px;
     }
-    .legal-meta {
-      padding: 16px 20px;
-      background: #f8fafc;
+
+    /* ---------- Contact box ---------- */
+    .pp-contact {
+      background: #f0f4f8;
+      padding: 22px 24px;
       border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      margin-bottom: 32px;
-      font-size: 0.88rem;
-      color: #64748b;
+      margin-top: 32px;
     }
-    .legal-meta strong {
-      color: #0b1a2f;
+    .pp-contact h2 {
+      border: none;
+      margin-top: 0;
+      padding: 0;
+      font-size: 1.15rem;
     }
-    @media (max-width: 768px) {
-      .legal-card {
-        padding: 28px 22px;
-      }
-      .legal-page {
-        margin-top: 70px;
-        padding: 40px 0 60px;
-      }
+    .pp-contact p { margin-bottom: 6px; }
+
+    /* ---------- Back link ---------- */
+    .pp-back {
+      display: inline-block;
+      margin: 24px 0 0;
+      font-size: 0.9rem;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .pp-back:hover { text-decoration: underline; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 640px) {
+      .pp-header { padding: 40px 18px 36px; }
+      .pp-header h1 { font-size: 1.5rem; }
+      .pp-container { margin: -20px 12px 40px; padding: 30px 22px; }
+      .pp-container h2 { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
-  <div id="navbar-placeholder"></div>
 
-  <main class="legal-page">
-    <div class="legal-container">
-      <div class="legal-header">
-        <h1>Privacy Policy</h1>
-        <p>Last updated: October 2026</p>
-      </div>
+  <!-- ============ HEADER ============ -->
+  <header class="pp-header">
+    <h1>Privacy Policy</h1>
+    <p>Mindfuturetech Systems &nbsp;•&nbsp; Last updated: October 15, 2026</p>
+  </header>
 
-      <div class="legal-card">
-        <div class="legal-meta">
-          <strong>Mindfuturetech Systems</strong> ("we", "our", "us") is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
-        </div>
+  <!-- ============ CONTENT ============ -->
+  <main class="pp-container">
 
-        <h2>1. Information We Collect</h2>
-        <p>We collect information that you voluntarily provide to us when you use our website or services. This may include:</p>
-        <ul>
-          <li>Personal identification information (First name, Last name)</li>
-          <li>Contact information (Email address, Phone number)</li>
-          <li>Company name and fleet size (for business inquiries)</li>
-          <li>Position applied for (when submitting job applications)</li>
-          <li>Any messages or remarks you share with us</li>
-          <li>Device and browser information (for analytics and security)</li>
-        </ul>
-
-        <h2>2. How We Use Your Information</h2>
-        <p>We use the information we collect for the following purposes:</p>
-        <ul>
-          <li>To respond to your inquiries and provide requested services</li>
-          <li>To process job applications and communicate with candidates</li>
-          <li>To improve our website, products, and services</li>
-          <li>To send transactional emails such as confirmations and updates</li>
-          <li>To comply with legal obligations and protect our rights</li>
-          <li>To detect and prevent fraudulent or unauthorized activity</li>
-        </ul>
-
-        <h2>3. Sharing of Information</h2>
-        <p>We do <strong>not sell, trade, or rent</strong> your personal information to third parties. We may share information only with:</p>
-        <ul>
-          <li>Trusted service providers who assist us in operating our website and delivering services (e.g., email delivery partners like Resend)</li>
-          <li>Legal authorities when required by law, regulation, or court order</li>
-          <li>Business partners in connection with a merger, acquisition, or sale of assets</li>
-        </ul>
-
-        <h2>4. Data Security</h2>
-        <p>We implement industry-standard security measures to protect your personal information, including encryption in transit (HTTPS), secure servers, and access controls. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
-
-        <h2>5. Cookies and Tracking</h2>
-        <p>Our website may use cookies and similar technologies for functionality, analytics, and to enhance user experience. You can disable cookies in your browser settings, though some features may not work properly.</p>
-
-        <h2>6. Third-Party Services</h2>
-        <p>We may use third-party services for specific functions:</p>
-        <ul>
-          <li><strong>Resend</strong> — for email delivery of form submissions and notifications</li>
-          <li><strong>Google Fonts</strong> — for typography</li>
-          <li><strong>Unsplash</strong> — for stock imagery</li>
-        </ul>
-        <p>Each of these services has its own privacy policy, which we encourage you to review.</p>
-
-        <h2>7. Your Rights</h2>
-        <p>Depending on your jurisdiction, you may have the following rights:</p>
-        <ul>
-          <li>Access the personal information we hold about you</li>
-          <li>Request correction of inaccurate information</li>
-          <li>Request deletion of your personal information</li>
-          <li>Opt out of marketing communications at any time</li>
-          <li>Lodge a complaint with a data protection authority</li>
-        </ul>
-
-        <h2>8. Data Retention</h2>
-        <p>We retain personal information only as long as necessary to fulfill the purposes outlined in this policy, comply with legal obligations, or resolve disputes. Job applications are typically retained for up to 12 months.</p>
-
-        <h2>9. Children's Privacy</h2>
-        <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children.</p>
-
-        <h2>10. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date. Continued use of our services after changes constitutes acceptance of the updated policy.</p>
-
-        <h2>11. Contact Us</h2>
-        <p>If you have questions about this Privacy Policy or your personal information, please contact us:</p>
-        <ul>
-          <li>Email: <a href="mailto:hello@mindfuturetech.com">hello@mindfuturetech.com</a></li>
-          <li>Location: Pune, Maharashtra, India</li>
-        </ul>
-      </div>
+    <div class="pp-meta">
+      <strong>Summary:</strong> Mindfuturetech Systems respects your privacy. We collect only the
+      information needed to provide our software services, we never sell your data, and you can
+      contact us anytime to access, correct, or delete your information.
     </div>
+
+    <h2>Introduction</h2>
+    <p>
+      At <strong>Mindfuturetech Systems</strong>, accessible from our website, one of our main
+      priorities is the privacy of our visitors and clients. This Privacy Policy document
+      explains the types of information that is collected and recorded by Mindfuturetech Systems
+      and how we use it.
+    </p>
+    <p>
+      As a software development company, we handle both publicly available website data and
+      client project data. This policy covers both, so you understand exactly how we operate.
+    </p>
+    <p>
+      If you have additional questions or require more information about our Privacy Policy,
+      do not hesitate to contact us through email at
+      <a href="mailto:techinfo@mindfuturetech.com">techinfo@mindfuturetech.com</a>.
+    </p>
+
+    <h2>Log Files</h2>
+    <p>
+      Mindfuturetech Systems follows a standard procedure of using log files. These files log
+      visitors when they visit websites. All hosting companies do this as part of hosting
+      services' analytics. The information collected by log files includes:
+    </p>
+    <ul>
+      <li>Internet Protocol (IP) addresses</li>
+      <li>Browser type</li>
+      <li>Internet Service Provider (ISP)</li>
+      <li>Date and time stamp</li>
+      <li>Referring/exit pages</li>
+      <li>Possibly the number of clicks</li>
+    </ul>
+    <p>
+      These are not linked to any information that is personally identifiable. The purpose of
+      the information is for analyzing trends, administering the site, tracking users' movement
+      on the website, and gathering demographic information.
+    </p>
+
+    <h2>Cookies and Web Beacons</h2>
+    <p>
+      Like any other website, Mindfuturetech Systems uses 'cookies'. These cookies are used to
+      store information including visitors' preferences and the pages on the website that the
+      visitor accessed or visited. The information is used to optimize the users' experience
+      by customizing our web page content based on visitors' browser type and/or other information.
+    </p>
+    <p>
+      When you first visit our site, a cookie consent banner appears. You can choose
+      <strong>Allow all</strong>, <strong>Reject all</strong>, or <strong>Customize</strong> your
+      preferences. For full details, please see our
+      <a href="cookie-policy.html">Cookie Policy</a>.
+    </p>
+
+    <h2>How We Use Your Information</h2>
+    <p>We use the information we collect in various ways, including to:</p>
+    <ul>
+      <li>Provide, operate, and maintain our website and software services</li>
+      <li>Improve, personalize, and expand our website and offerings</li>
+      <li>Understand and analyze how you use our website</li>
+      <li>Develop new products, services, features, and functionality</li>
+      <li>Communicate with you for customer service, updates, and project-related information</li>
+      <li>Send you emails regarding enquiries, proposals, or support</li>
+      <li>Find and prevent fraud</li>
+    </ul>
+
+    <h2>Client Project Data</h2>
+    <p>
+      When you engage Mindfuturetech Systems for software development, consulting, or related
+      services, we may have access to your business data, source code, or other confidential
+      materials. This data is:
+    </p>
+    <ul>
+      <li>Used solely for delivering the agreed services</li>
+      <li>Stored securely with access limited to authorized team members</li>
+      <li>Never shared with third parties without your written consent</li>
+      <li>Returned or deleted upon request at the end of the engagement</li>
+    </ul>
+
+    <h2>Google DoubleClick DART Cookie</h2>
+    <p>
+      Google is one of the third-party vendors on our site. It also uses cookies, known as
+      DART cookies, to serve ads to our site visitors based upon their visit to our site and
+      other sites on the internet. However, visitors may choose to decline the use of DART
+      cookies by visiting the Google ad and content network Privacy Policy at the following
+      URL: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a>
+    </p>
+
+    <h2>Our Advertising Partners</h2>
+    <p>
+      Some advertisers on our site may use cookies and web beacons. Our advertising partners
+      are listed below. Each has their own Privacy Policy for their policies on user data.
+      For easier access, we have hyperlinked to their Privacy Policies below.
+    </p>
+    <ul>
+      <li><strong>Google</strong> — <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a></li>
+    </ul>
+
+    <h2>Third-Party Privacy Policies</h2>
+    <p>
+      Mindfuturetech Systems' Privacy Policy does not apply to other advertisers or websites.
+      Thus, we are advising you to consult the respective Privacy Policies of these third-party
+      ad servers for more detailed information. It may include their practices and instructions
+      about how to opt out of certain options.
+    </p>
+    <p>
+      You can choose to disable cookies through your individual browser options. To know more
+      detailed information about cookie management with specific web browsers, it can be found
+      at the browsers' respective websites.
+    </p>
+
+    <h2>Data Protection Rights</h2>
+    <p>
+      We would like to make sure you are fully aware of all of your data protection rights.
+      Every user is entitled to the following:
+    </p>
+    <ul>
+      <li><strong>The right to access</strong> — You have the right to request copies of your personal data.</li>
+      <li><strong>The right to rectification</strong> — You have the right to request that we correct any information you believe is inaccurate.</li>
+      <li><strong>The right to erasure</strong> — You have the right to request that we erase your personal data, under certain conditions.</li>
+      <li><strong>The right to restrict processing</strong> — You have the right to request that we restrict the processing of your personal data, under certain conditions.</li>
+      <li><strong>The right to object to processing</strong> — You have the right to object to our processing of your personal data, under certain conditions.</li>
+      <li><strong>The right to data portability</strong> — You have the right to request that we transfer the data we have collected to another organization, or directly to you, under certain conditions.</li>
+    </ul>
+    <p>
+      If you make a request, we have one month to respond to you. If you would like to exercise
+      any of these rights, please contact us.
+    </p>
+
+    <h2>Data Security</h2>
+    <p>
+      We use industry-standard measures — including encryption, firewalls, secure servers, and
+      access controls — to protect your information. However, no method of transmission over the
+      internet is 100% secure, and we cannot guarantee absolute security.
+    </p>
+
+    <h2>Children's Information</h2>
+    <p>
+      Another part of our priority is adding protection for children while using the internet.
+      We encourage parents and guardians to observe, participate in, and/or monitor and guide
+      their online activity.
+    </p>
+    <p>
+      Mindfuturetech Systems does not knowingly collect any Personal Identifiable Information
+      from children under the age of 13. If you think that your child provided this kind of
+      information on our website, we strongly encourage you to contact us immediately and we
+      will do our best efforts to promptly remove such information from our records.
+    </p>
+
+    <h2>Online Privacy Policy Only</h2>
+    <p>
+      This Privacy Policy applies only to our online activities and is valid for visitors to our
+      website with regards to the information that they shared and/or collect in Mindfuturetech
+      Systems. This policy is not applicable to any information collected offline or via channels
+      other than this website.
+    </p>
+
+    <h2>Changes to This Privacy Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our practices,
+      technology, or legal requirements. Any updates will be posted on this page with a revised
+      "Last updated" date. We encourage you to review this page periodically.
+    </p>
+
+    <h2>Consent</h2>
+    <p>
+      By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+    </p>
+
+    <!-- <div class="pp-contact">
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us:</p>
+      <p><strong>Email:</strong> <a href="mailto:techinfo@mindfuturetech.com">techinfo@mindfuturetech.com</a></p>
+      <p><strong>Website:</strong> <a href="contact.html">Contact page</a></p>
+      <p><strong>Company:</strong> Mindfuturetech Systems</p>
+    </div> -->
+
+    <a href="index.html" class="pp-back">← Back to Home</a>
+
   </main>
 
-  <div id="footer-placeholder"></div>
-  <script src="js/load-components.js"></script>
 </body>
 </html>
