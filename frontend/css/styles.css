@@ -1397,7 +1397,6 @@ body {
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
 }
 
 /* Service Card - Matches Solution Card Layout */
@@ -2617,25 +2616,12 @@ body {
   animation-delay: -2s;
 }
 
-/* .pill-digital {
-  background: linear-gradient(135deg, rgba(112, 104, 218, 0.15), rgba(176, 136, 90, 0.2));
-  color: var(--auto-bright);
-  border: 1px solid rgba(102, 50, 213, 0.3);
-  animation-delay: -3s;
-} */
 
 .pill-digital {
 
-  background: linear-gradient(
-    135deg,
-    rgba(0, 174, 255, 0.25),
-    rgba(0, 110, 255, 0.30)
-  );
-
+  background: linear-gradient(135deg, rgba(0, 174, 255, 0.25), rgba(0, 110, 255, 0.30) );
   color: #29B6FF;
-
   border: 1px solid rgba(0, 174, 255, 0.55);
-
   animation-delay: -3s;
 }
 
@@ -2693,67 +2679,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-/* ---- Ring Animation ---- */
-/* .ring {
-  position: relative;
-  width: min(420px, 90vw);
-  height: min(420px, 90vw);
-}
-
-.ring img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.img-rotate {
-  animation: rotate 12s linear infinite;
-}
-
-.img-counter {
-  animation: counterRotate 190s linear infinite;
-}
-
-.ring-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-}
-
-.ring-logo {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-}
-
-.scroll-indicator {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.scroll-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  animation: scrollBounce 2s ease-in-out infinite;
-} */
-/* ---- Ring Animation ---- */
 /* ---- Ring Animation ---- */
 .ring {
   position: relative;
@@ -4029,7 +3954,7 @@ body {
 /* Footer Links Grid */
 .footer-links-grid {
   display: grid;
-  grid-template-columns: 2fr 1.2fr 1.2fr 1.2fr;
+  grid-template-columns: 1.2fr 1.2fr 1.2fr 1.2fr;
   gap: 20px;
   text-align: left;
 }
@@ -4042,9 +3967,7 @@ body {
   gap: 4px;
 }
 
-.footer-column-solutions {
-  gap: 4px;
-}
+
 
 .footer-heading {
   color: #fff;
@@ -4128,7 +4051,7 @@ body {
   }
 
   .footer-links-grid {
-    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
   }
 }

@@ -1,3 +1,4 @@
+
 /* =============================================
    About Page Styles
    ============================================= */
@@ -151,74 +152,28 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Hero Visual */
-.about-hero-visual {
+/* ===== Hero Media (curved image) ===== */
+body.about-page .about-hero-media {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  isolation: isolate;
 }
 
-.about-company-animation {
-  position: relative;
-  width: 300px;
-  height: 300px;
-}
-
-.about-company-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4.5rem;
-  z-index: 3;
-  animation: iconPulse 2.5s ease-in-out infinite;
-}
-
-.about-company-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid rgba(91, 127, 166, 0.15);
-}
-
-.about-company-ring.ring-1 {
+body.about-page .about-hero-photo {
+  display: block;
   width: 100%;
-  height: 100%;
-  animation: spin 20s linear infinite;
+  max-width: 500px;
+  height: auto;
+  border-radius: 20px !important;
+  object-fit: cover;
 }
-
-.about-company-ring.ring-2 {
-  width: 75%;
-  height: 75%;
-  border-color: rgba(26, 188, 156, 0.15);
-  animation: spin 15s linear infinite reverse;
-}
-
-.about-company-ring.ring-3 {
-  width: 50%;
-  height: 50%;
-  border-color: rgba(155, 89, 182, 0.2);
-  animation: spin 10s linear infinite;
-}
-
-.about-company-particles {
-  position: absolute;
-  inset: 0;
-}
-
-.about-particle {
-  position: absolute;
-  font-size: 1.3rem;
-  animation: particleFloat 4.5s ease-in-out infinite;
-}
-
-.about-particle.p1 { top: 8%; left: 10%; animation-delay: 0s; }
-.about-particle.p2 { top: 12%; right: 12%; animation-delay: 0.9s; }
-.about-particle.p3 { bottom: 15%; left: 8%; animation-delay: 1.8s; }
-.about-particle.p4 { bottom: 10%; right: 10%; animation-delay: 2.7s; }
-
 /* Section Common */
 .about-section-header {
   text-align: center;
@@ -459,66 +414,63 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .about-mission-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .about-team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .about-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .about-mission-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-team-grid    { grid-template-columns: repeat(2, 1fr); }
+  .about-stats-grid   { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 968px) {
+  .about-hero {
+    min-height: auto;
+    padding: 50px 0 60px;
+  }
+
   .about-hero-content {
     grid-template-columns: 1fr;
+    gap: 36px;
     text-align: center;
   }
-  
+
   .about-hero-text p {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
-  
-  .about-hero-stats {
-    justify-content: center;
+
+  .about-hero-stats { justify-content: center; }
+
+  body.about-page .about-hero-media {
+    width: 100%;
+    max-width: 520px;
   }
+
+  body.about-page .about-hero-photo { max-width: 100%; }
 }
 
 @media (max-width: 768px) {
-  .about-mission-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .about-team-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .about-stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
+  .about-mission-grid,
+  .about-team-grid,
+  .about-stats-grid { grid-template-columns: 1fr; }
+
   .about-hero {
     margin-top: 70px;
-    padding: 40px 0;
-    min-height: auto;
+    padding: 36px 0 44px;
   }
-  
-  .about-company-animation {
-    width: 220px;
-    height: 220px;
+
+  .about-hero-content {
+    padding: 0 16px;
+    gap: 28px;
   }
-  
-  .about-company-icon {
-    font-size: 3.5rem;
+
+  body.about-page .about-hero-media,
+  body.about-page .about-hero-photo {
+    border-radius: 16px !important;
   }
-  
+
+  body.about-page .about-hero-photo { aspect-ratio: 6 / 5; }
+
   .about-hero-stats {
-    flex-direction: column;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 20px 28px;
   }
 }
