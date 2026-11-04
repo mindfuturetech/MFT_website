@@ -128,9 +128,9 @@ body {
 
 .nav-link {
   text-decoration: none;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 8px 14px;
   border-radius: 8px;
   transition: var(--transition);
@@ -1335,7 +1335,7 @@ body {
   flex-direction: column;       /* icon on top, text below */
   gap: 8px;
   padding: 20px;                /* match about-info-item padding */
-  background: #f8fafc;
+  background: #eef1f6;
   border-radius: 12px;          /* match about-info-item radius */
   border: 1px solid #e2e8f0;    /* match about-info-item border */
   transition: 0.3s ease;
@@ -1355,7 +1355,7 @@ body {
 }
 
 .why-choose-card h3 {
-  font-size: 0.95rem;           /* match about-info-item h4 */
+  font-size: 1.15rem;           /* match about-info-item h4 */
   font-weight: 700;
   color: #0b1a2f;
   margin-bottom: 4px;
@@ -1699,7 +1699,13 @@ body {
   border-radius: 8px;
   margin: 24px 0 32px !important;
 }
-
+/* Orange apostrophe inside the closing box */
+.about-closing .quote {
+  color: #f5b041 !important;   /* Your orange theme color */
+  font-weight: 700;            /* Makes it pop slightly */
+  font-size: 1.2rem;           /* Optional: slightly bigger for emphasis */
+  vertical-align: middle;      /* Aligns nicely with the text */
+}
 /* =============================================
    About Info Grid - 3 Columns
    ============================================= */
@@ -1726,7 +1732,7 @@ body {
 }
 
 .about-info-item h4 {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #0b1a2f;
   margin-bottom: 4px;
@@ -1929,7 +1935,7 @@ body {
 }
 
 .about-info-item h4 {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #0b1a2f;
   margin-bottom: 4px;
@@ -2791,11 +2797,11 @@ body {
   color: #c4843a;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .section-header h2 {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 12px;
@@ -3387,7 +3393,7 @@ body {
   justify-content: center;
   padding: 32px 24px;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 251, 0.85));
+  /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 251, 0.85)); */
   border: 1px solid #e2e8f0;
   transition: 0.3s ease;
   text-align: left;
@@ -3403,7 +3409,7 @@ body {
 .highlight-num {
   font-size: 2.2rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #c4843a, #e67e22);
+  background: #c4843a;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3838,14 +3844,13 @@ body {
 /* Footer Top - Brand + Links */
 .footer-top {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 3.5fr; /* Gives more room to the links grid */
   gap: 40px;
   padding-bottom: 32px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   margin-bottom: 24px;
   text-align: left;
 }
-
 /* Brand Section */
 .footer-brand-section {
   display: flex;
@@ -3865,6 +3870,7 @@ body {
 }
 
 .footer-logo {
+  border-radius: 7px;
   height: 52px;
   width: auto;
   max-width: 200px;
@@ -3954,9 +3960,11 @@ body {
 /* Footer Links Grid */
 .footer-links-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1.2fr 1.2fr 1.2fr;
+  /* 2 Solutions columns (1.2fr each), 1 Industries, 1 Company */
+  grid-template-columns: 1.2fr 1.2fr 1.5fr 1fr; 
   gap: 20px;
   text-align: left;
+  width: 100%;
 }
 
 .footer-column {
@@ -5715,4 +5723,144 @@ html body #industriesDropdown .industries-single-col .mega-subitem:hover strong 
   .cookie-btn {
     width: 100%;
   }
+}/* =============================================
+   ABOUT SECTION - FORCED PURE BLACK (OVERRIDE ALL)
+   ============================================= */
+
+/* 1. Force the section to be Pure Black */
+html body .section.about,
+html body .about,
+html body #about {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  padding: 100px 0 !important;
 }
+
+/* 2. Headings (White) */
+html body .about .about-text h2,
+html body .about .about-focus-title {
+  color: #ffffff !important;
+}
+
+/* 3. Body Text & Paragraphs (Soft White @ 60% opacity) */
+html body .about .about-text p,
+html body .about .about-info-item p,
+html body .about .about-focus-list li,
+html body .about .highlight-label {
+  color: rgba(255, 255, 255, 0.6) !important; 
+}
+
+/* Make sure bold text in paragraphs is slightly brighter than normal text */
+html body .about .about-text strong {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 4. The "Who We Are" Tag */
+html body .about .section-tag {
+  color: #f5b041 !important;
+  background: rgba(245, 176, 65, 0.1) !important;
+  border: 1px solid rgba(245, 176, 65, 0.2) !important;
+}
+
+/* 5. All Inner Boxes - Force to Dark Gray (#111) with Black Shadow */
+html body .about .about-focus,
+html body .about .about-closing,
+html body .about .about-info-item,
+html body .about .highlight {
+  background-color: #1a1a1a  !important;
+  border: 1px solid #27272a !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* 6. Box Headings & Closing Text */
+html body .about .about-info-item h4,
+html body .about .about-closing {
+  color: #ffffff !important;
+}
+
+/* 7. Orange Stats in Highlights */
+html body .about .highlight-num {
+  color: #f5b041 !important; 
+}
+
+/* 8. Box Hover Effects */
+html body .about .about-info-item:hover,
+html body .about .highlight:hover {
+  border-color: #f5b041 !important;
+  transform: translateY(-4px);
+}
+
+/* 9. The little orange dashes in Focus Areas */
+/* html body .about .about-focus-list li::before {
+  background-color: #f5b041 !important;
+} */
+/* =============================================
+   Focus Area Text & Checkmarks
+   ============================================= */
+
+/* Make room for the checkmark */
+html body .about .about-focus-list li {
+  position: relative;
+  padding-left: 26px !important; /* Space for the tick */
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* The Checkmark styling (Replaces the dash completely) */
+html body .about .about-focus-list li::before {
+  content: '✓' !important;
+  position: absolute;
+  left: 0;
+  top: 2px; /* Positions the checkmark vertically */
+  color: #f5b041 !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  
+  /* Forcefully remove the old dash box */
+  width: auto !important;
+  height: auto !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+/* 10. The orange left border on the closing box */
+/* html body .about .about-closing {
+  border-left: 4px solid #f5b041 !important;
+} */
+
+/* 11. Bring back the Grid Layouts */
+html body .about .about-info-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+}
+
+html body .about .about-highlights {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+}
+
+/* 12. Mobile Responsiveness */
+@media (max-width: 1024px) {
+  html body .about .about-info-grid,
+  html body .about .about-highlights {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  html body .about .about-info-grid,
+  html body .about .about-highlights {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* Makes the headline part of the list item brighter (if using dark theme) */
+.about-focus-list li strong {
+  color: #ffffff; /* Or your preferred highlight color */
+  display: block; /* Puts the description on the next line */
+  margin-bottom: 2px;
+  font-size: 1rem;
+}
+
+/* If you want the text to stay on the same line, remove 'display: block' above */
