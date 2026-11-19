@@ -380,7 +380,16 @@ function initializeNavbar() {
       });
     });
   }
-
+// After your navbar/footer injection logic
+(function loadStatsCounter() {
+  if (document.getElementById('stats-counter-script')) return;
+  if (!document.querySelector('[data-target]')) return; // skip pages without stats
+  const s = document.createElement('script');
+  s.id = 'stats-counter-script';
+  s.src = 'js/stats-counter.js';
+  s.defer = true;
+  document.body.appendChild(s);
+})();
   // Smooth anchor scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {

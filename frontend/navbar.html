@@ -8,7 +8,7 @@
     </button>
     <nav class="nav-links" id="navLinks">
 
-      <!-- ============ SOLUTIONS ============ -->
+      <!-- ============ SOLUTIONS (A–Z) ============ -->
       <div class="nav-dropdown nav-mega" id="solutionsDropdown">
         <button class="nav-link nav-dropdown-toggle" onclick="MFT.toggleDropdown('solutionsDropdown', event)" aria-expanded="false" aria-haspopup="true">
           Solutions
@@ -17,7 +17,46 @@
         <div class="mega-menu solutions-mega-menu">
           <div class="solutions-single-col">
 
-            <!-- 1. Enterprise Core & Workforce Management -->
+            <!-- 1. Applied AI & Automation -->
+            <div class="mega-item-wrapper has-submenu">
+              <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
+                <span><strong>Applied AI &amp; Automation</strong></span>
+                <span class="submenu-arrow">›</span>
+              </a>
+              <div class="mega-submenu">
+                <a href="solutions/ai-agent.html" class="mega-subitem"><strong>AI Agent</strong></a>
+                <a href="solutions/ai-erp.html" class="mega-subitem"><strong>AI ERP</strong></a>
+              </div>
+            </div>
+
+            <!-- 2. Commerce, Finance & Content Systems -->
+            <div class="mega-item-wrapper has-submenu">
+              <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
+                <span><strong>Commerce, Finance &amp; Content</strong></span>
+                <span class="submenu-arrow">›</span>
+              </a>
+              <div class="mega-submenu">
+                <a href="solutions/pos.html" class="mega-subitem"><strong>POS</strong></a>
+                <a href="solutions/retail.html" class="mega-subitem"><strong>Retail</strong></a>
+                <a href="solutions/finconnect.html" class="mega-subitem"><strong>FinConnect</strong></a>
+                <!-- <a href="solutions/content-management.html" class="mega-subitem"><strong>Content Management</strong></a> -->
+                <a href="solutions/pms.html" class="mega-subitem"><strong>PMS</strong></a>
+              </div>
+            </div>
+
+            <!-- 3. Computer Vision & Intelligent Hardware -->
+            <div class="mega-item-wrapper has-submenu">
+              <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
+                <span><strong>Computer Vision &amp; Hardware</strong></span>
+                <span class="submenu-arrow">›</span>
+              </a>
+              <div class="mega-submenu">
+                <a href="solutions/smart-camera.html" class="mega-subitem"><strong>Smart Camera</strong></a>
+                <a href="solutions/ocr.html" class="mega-subitem"><strong>OCR</strong></a>
+              </div>
+            </div>
+
+            <!-- 4. Enterprise Core & Workforce Management -->
             <div class="mega-item-wrapper has-submenu">
               <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
                 <span><strong>Enterprise Core &amp; Workforce</strong></span>
@@ -30,7 +69,7 @@
               </div>
             </div>
 
-            <!-- 2. Operational & Supply Chain Solutions -->
+            <!-- 5. Operational & Supply Chain Solutions -->
             <div class="mega-item-wrapper has-submenu">
               <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
                 <span><strong>Operational &amp; Supply Chain</strong></span>
@@ -44,53 +83,11 @@
               </div>
             </div>
 
-            <!-- 3. Applied AI & Automation -->
-            <div class="mega-item-wrapper has-submenu">
-              <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
-                <span><strong>Applied AI &amp; Automation</strong></span>
-                <span class="submenu-arrow">›</span>
-              </a>
-              <div class="mega-submenu">
-                <a href="solutions/ai-agent.html" class="mega-subitem"><strong>AI Agent</strong></a>
-                <a href="solutions/ai-bot.html" class="mega-subitem"><strong>AI Bot</strong></a>
-                <a href="solutions/ai-erp.html" class="mega-subitem"><strong>AI ERP</strong></a>
-              </div>
-            </div>
-
-            <!-- 4. Computer Vision & Intelligent Hardware -->
-            <div class="mega-item-wrapper has-submenu">
-              <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
-                <span><strong>Computer Vision &amp; Hardware</strong></span>
-                <span class="submenu-arrow">›</span>
-              </a>
-              <div class="mega-submenu">
-                <a href="solutions/smart-camera.html" class="mega-subitem"><strong>Smart Camera</strong></a>
-                <a href="solutions/ocr.html" class="mega-subitem"><strong>OCR</strong></a>
-                <a href="solutions/ar.html" class="mega-subitem"><strong>AR</strong></a>
-              </div>
-            </div>
-
-            <!-- 5. Commerce, Finance & Content Systems -->
-            <div class="mega-item-wrapper has-submenu">
-              <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
-                <span><strong>Commerce, Finance &amp; Content</strong></span>
-                <span class="submenu-arrow">›</span>
-              </a>
-              <div class="mega-submenu">
-                <a href="solutions/pos.html" class="mega-subitem"><strong>POS</strong></a>
-                <a href="solutions/retail.html" class="mega-subitem"><strong>Retail</strong></a>
-                <a href="solutions/finconnect.html" class="mega-subitem"><strong>FinConnect</strong></a>
-                <a href="solutions/content-management.html" class="mega-subitem"><strong>Content Management</strong></a>
-                <a href="solutions/pms.html" class="mega-subitem"><strong>PMS</strong></a>
-
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
 
-      <!-- ============ INDUSTRIES ============ -->
+      <!-- ============ INDUSTRIES (A–Z) ============ -->
       <div class="nav-dropdown nav-mega" id="industriesDropdown">
         <button class="nav-link nav-dropdown-toggle" onclick="MFT.toggleDropdown('industriesDropdown', event)" aria-expanded="false" aria-haspopup="true">
           Industries
@@ -99,11 +96,7 @@
         <div class="mega-menu industries-mega-menu">
           <div class="industries-single-col">
 
-            <a href="industries/retail-fmcg.html" class="mega-item">
-              <span><strong>Retail and FMCG</strong></span>
-            </a>
-
-            <div class="mega-item-wrapper has-submenu">
+            <!-- <div class="mega-item-wrapper has-submenu">
               <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
                 <span><strong>Agri-Business</strong></span>
                 <span class="submenu-arrow">›</span>
@@ -112,21 +105,7 @@
                 <a href="industries/dairy.html" class="mega-subitem"><strong>Dairy</strong></a>
                 <a href="industries/agriculture.html" class="mega-subitem"><strong>Agriculture</strong></a>
               </div>
-            </div>
-
-            <!-- <div class="mega-item-wrapper has-submenu">
-              <a class="mega-item" onclick="MFT.toggleSubmenu(event)">
-                <span><strong>Logistics and Transportation</strong></span>
-                <span class="submenu-arrow">›</span>
-              </a>
-              <div class="mega-submenu">
-                <a href="solutions/logistics.html" class="mega-subitem"><strong>Logistics</strong></a>
-                <a href="solutions/transportation.html" class="mega-subitem"><strong>Transportation</strong></a>
-              </div>
             </div> -->
-            <a href="industries/logistics-transportation.html" class="mega-item">
-              <span><strong>Logistics and Transportation</strong></span>
-            </a>
 
             <a href="industries/community-center.html" class="mega-item">
               <span><strong>Community Centre</strong></span>
@@ -134,6 +113,14 @@
 
             <a href="industries/education.html" class="mega-item">
               <span><strong>Education</strong></span>
+            </a>
+
+            <a href="industries/financial-services.html" class="mega-item">
+              <span><strong>Finance</strong></span>
+            </a>
+
+            <a href="industries/health-care.html" class="mega-item">
+              <span><strong>Healthcare</strong></span>
             </a>
 
             <div class="mega-item-wrapper has-submenu">
@@ -147,16 +134,16 @@
               </div>
             </div>
 
-            <a href="industries/health-care.html" class="mega-item">
-              <span><strong>Healthcare</strong></span>
-            </a>
-
-            <a href="industries/financial-services.html" class="mega-item">
-              <span><strong>Finance</strong></span>
+            <a href="industries/logistics-transportation.html" class="mega-item">
+              <span><strong>Logistics and Transportation</strong></span>
             </a>
 
             <a href="industries/manufacturing.html" class="mega-item">
               <span><strong>Manufacturing</strong></span>
+            </a>
+
+            <a href="industries/retail-fmcg.html" class="mega-item">
+              <span><strong>Retail and FMCG</strong></span>
             </a>
 
           </div>
