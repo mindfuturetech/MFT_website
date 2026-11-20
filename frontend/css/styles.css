@@ -935,7 +935,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 968px) {
+/* @media (max-width: 968px) {
   .hero-slide .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -955,6 +955,39 @@ body {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+} */
+ @media (max-width: 968px) {
+  .hero-slide .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .hero-slide:first-child .hero-text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-slide:first-child .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-slide:first-child .hero-text p {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* NEW — fix the headline box alignment on mobile */
+  .hero-headline-wrap {
+    align-items: center;       /* was flex-start → center on mobile */
+    text-align: center;
+  }
+
+  /* NEW — arrow centered on mobile instead of right-pinned */
+  .hero-scroll-arrow {
+    align-self: center;        /* was flex-end → center on mobile */
   }
 }
 
@@ -2409,8 +2442,12 @@ body {
 /* Hero headline with animated background */
 .hero-headline-wrap {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   margin-bottom: 20px;
-  padding: 28px 32px;
+  padding: 24px 28px;            /* was 56px 64px — now small */
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid rgba(255, 183, 120, 0.25);
@@ -2583,6 +2620,7 @@ body {
   position: relative;
   z-index: 1;
   letter-spacing: 0.01em;
+  font-weight: 600;
 }
 
 .hero-domain-pills {
@@ -5882,4 +5920,9 @@ html body .about .about-highlights {
   display: inline-block;
   min-width: 1ch; /* prevents width jump while counting */
 }
+.hero-headline-wrap {
+  position: relative;   /* already set in your CSS */
+  padding: 56px 44px;
+}
+
 /* If you want the text to stay on the same line, remove 'display: block' above */

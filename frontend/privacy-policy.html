@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Mindfuturetech Systems</title>
   <meta name="description" content="Privacy Policy for Mindfuturetech Systems — a software development company. Learn how we collect, use, and protect your information." />
+  <base href="./" />
+  <link rel="icon" type="image/jpeg" href="assets/images/mftsymbol.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.75;
       color: #2d2d2d;
       background: #f7f8fa;
@@ -23,6 +30,7 @@
       color: #fff;
       padding: 56px 24px 48px;
       text-align: center;
+      margin-top: 84px; /* offset for fixed navbar */
     }
     .pp-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
     .pp-header p  { font-size: 0.95rem; color: #c7d0da; }
@@ -104,6 +112,9 @@
     .pp-back:hover { text-decoration: underline; }
 
     /* ---------- Responsive ---------- */
+    @media (max-width: 968px) {
+      .pp-header { margin-top: 70px; padding: 40px 18px 36px; }
+    }
     @media (max-width: 640px) {
       .pp-header { padding: 40px 18px 36px; }
       .pp-header h1 { font-size: 1.5rem; }
@@ -113,6 +124,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
 
   <!-- ============ HEADER ============ -->
   <header class="pp-header">
@@ -295,17 +309,14 @@
       By using our website, you hereby consent to our Privacy Policy and agree to its terms.
     </p>
 
-    <!-- <div class="pp-contact">
-      <h2>Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, please contact us:</p>
-      <p><strong>Email:</strong> <a href="mailto:techinfo@mindfuturetech.com">techinfo@mindfuturetech.com</a></p>
-      <p><strong>Website:</strong> <a href="contact.html">Contact page</a></p>
-      <p><strong>Company:</strong> Mindfuturetech Systems</p>
-    </div> -->
-
     <a href="index.html" class="pp-back">← Back to Home</a>
 
   </main>
 
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load Components -->
+  <script src="js/load-components.js"></script>
 </body>
 </html>
