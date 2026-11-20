@@ -155,3 +155,124 @@
   .aerp-overview-grid, .aerp-features-grid, .aerp-benefits-grid, .aerp-stats-grid { grid-template-columns: 1fr; }
   .aerp-hero { margin-top: 70px; padding: 40px 0; min-height: auto; }
 }
+/* =============================================
+   AI ERP — FAQ Section
+   ============================================= */
+
+.aerp-faq {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.aerp-faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.aerp-faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.aerp-faq-item:hover {
+  border-color: #9b59b6;
+  box-shadow: 0 8px 28px rgba(155, 89, 182, 0.08);
+}
+
+.aerp-faq-item[open] {
+  border-color: #9b59b6;
+  box-shadow: 0 10px 32px rgba(155, 89, 182, 0.12);
+}
+
+.aerp-faq-item summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 56px 20px 24px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #0b1a2f;
+  line-height: 1.5;
+  transition: color 0.25s ease;
+}
+
+.aerp-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.aerp-faq-item summary:hover {
+  color: #9b59b6;
+}
+
+.aerp-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #9b59b6;
+  border: 1.5px solid rgba(155, 89, 182, 0.35);
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.aerp-faq-item[open] summary::after {
+  content: "–";
+  transform: translateY(-50%) rotate(180deg);
+  background: #9b59b6;
+  color: #ffffff;
+  border-color: #9b59b6;
+}
+
+.aerp-faq-answer {
+  padding: 0 24px 22px;
+  animation: aerpFaqFade 0.35s ease;
+}
+
+.aerp-faq-answer p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.aerp-faq-answer strong {
+  color: #0b1a2f;
+  font-weight: 700;
+}
+
+@keyframes aerpFaqFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .aerp-faq { padding: 56px 0; }
+  .aerp-faq-item summary {
+    padding: 16px 48px 16px 18px;
+    font-size: 0.96rem;
+  }
+  .aerp-faq-item summary::after {
+    right: 16px;
+    width: 22px;
+    height: 22px;
+    font-size: 1.1rem;
+  }
+  .aerp-faq-answer {
+    padding: 0 18px 18px;
+  }
+  .aerp-faq-answer p { font-size: 0.92rem; }
+}

@@ -117,3 +117,133 @@
   .hris-overview-grid, .hris-features-grid, .hris-benefits-grid, .hris-stats-grid { grid-template-columns: 1fr; }
   .hris-hero { margin-top: 70px; padding: 40px 0; min-height: auto; }
 }
+
+/* =============================================
+   HRIS — FAQ Section
+   ============================================= */
+
+.hris-faq {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.hris-faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hris-faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hris-faq-item:hover {
+  border-color: #6366f1;
+  box-shadow: 0 8px 28px rgba(99, 102, 241, 0.1);
+}
+
+.hris-faq-item[open] {
+  border-color: #6366f1;
+  box-shadow: 0 10px 32px rgba(99, 102, 241, 0.14);
+}
+
+.hris-faq-item summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 56px 20px 24px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #0b1a2f;
+  line-height: 1.5;
+  transition: color 0.25s ease;
+}
+
+.hris-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.hris-faq-item summary:hover {
+  color: #6366f1;
+}
+
+.hris-faq-item summary:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: -2px;
+  border-radius: 14px;
+}
+
+.hris-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #6366f1;
+  border: 1.5px solid rgba(99, 102, 241, 0.45);
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.hris-faq-item[open] summary::after {
+  content: "–";
+  transform: translateY(-50%) rotate(180deg);
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+}
+
+.hris-faq-answer {
+  padding: 0 24px 22px;
+  animation: hrisFaqFade 0.35s ease;
+}
+
+.hris-faq-answer p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.hris-faq-answer strong {
+  color: #0b1a2f;
+  font-weight: 700;
+}
+
+@keyframes hrisFaqFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hris-faq { padding: 56px 0; }
+  .hris-faq-item summary {
+    padding: 16px 48px 16px 18px;
+    font-size: 0.96rem;
+  }
+  .hris-faq-item summary::after {
+    right: 16px;
+    width: 22px;
+    height: 22px;
+    font-size: 1.1rem;
+  }
+  .hris-faq-answer {
+    padding: 0 18px 18px;
+  }
+  .hris-faq-answer p { font-size: 0.92rem; }
+  .hris-faq-list { padding: 0 16px; }
+}
