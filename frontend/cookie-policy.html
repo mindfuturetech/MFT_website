@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cookie Policy | Mindfuturetech</title>
   <meta name="description" content="Cookie Policy for Mindfuturetech. Learn what cookies we use and how to control them." />
+  <base href="./" />
+  <link rel="icon" type="image/jpeg" href="assets/images/mftsymbol.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.7;
       color: #2d2d2d;
       background: #f7f8fa;
@@ -216,6 +223,7 @@
       color: #fff;
       padding: 48px 24px 40px;
       text-align: center;
+      margin-top: 84px; /* offset for fixed navbar */
     }
     .cp-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
     .cp-header p  { font-size: 0.95rem; color: #c7d0da; }
@@ -316,6 +324,9 @@
     /* ============================================================
        RESPONSIVE
        ============================================================ */
+    @media (max-width: 968px) {
+      .cp-header { margin-top: 70px; padding: 36px 18px 32px; }
+    }
     @media (max-width: 640px) {
       .cp-header { padding: 36px 18px 32px; }
       .cp-header h1 { font-size: 1.5rem; }
@@ -331,6 +342,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
 
   <!-- ============ HEADER ============ -->
   <header class="cp-header">
@@ -523,7 +537,6 @@
         Choose which categories of cookies you allow. Strictly necessary cookies are always on.
       </p>
 
-      <!-- Necessary (always on) -->
       <div class="cookie-category">
         <div class="cookie-category-text">
           <h4>Strictly Necessary</h4>
@@ -535,7 +548,6 @@
         </label>
       </div>
 
-      <!-- Analytics -->
       <div class="cookie-category">
         <div class="cookie-category-text">
           <h4>Analytics</h4>
@@ -547,7 +559,6 @@
         </label>
       </div>
 
-      <!-- Functionality -->
       <div class="cookie-category">
         <div class="cookie-category-text">
           <h4>Functionality</h4>
@@ -559,7 +570,6 @@
         </label>
       </div>
 
-      <!-- Marketing -->
       <div class="cookie-category">
         <div class="cookie-category-text">
           <h4>Marketing</h4>
@@ -578,12 +588,17 @@
     </div>
   </div>
 
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load Components -->
+  <script src="js/load-components.js"></script>
+
   <!-- ============================================================
-       SCRIPT
+       COOKIE SCRIPT
        ============================================================ -->
   <script>
     (function () {
-      /* ---------- Elements ---------- */
       const banner       = document.getElementById('cookie-banner');
       const modal        = document.getElementById('cookie-modal');
       const acceptBtn    = document.getElementById('cookie-accept');
@@ -599,12 +614,8 @@
       };
 
       const STORAGE_KEY = 'cookieConsent';
-
-      /* ---------- 1. Show banner on this page ---------- */
-      // Always show on the cookie-policy page so users can review/change.
       const saved = localStorage.getItem(STORAGE_KEY);
 
-      // Load previous preferences into the modal toggles
       if (saved) {
         try {
           const parsed = JSON.parse(saved);
@@ -614,10 +625,8 @@
         } catch (e) { /* ignore legacy string format */ }
       }
 
-      // Show the banner after a short delay
       setTimeout(() => banner.classList.add('show'), 400);
 
-      /* ---------- 2. Helper: save & hide ---------- */
       function saveConsent(obj) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
         banner.classList.remove('show');
@@ -625,27 +634,22 @@
         applyConsent(obj);
       }
 
-      /* ---------- 3. Accept all ---------- */
       acceptBtn.addEventListener('click', () => {
         saveConsent({ analytics: true, functionality: true, marketing: true });
       });
 
-      /* ---------- 4. Reject all ---------- */
       rejectBtn.addEventListener('click', () => {
         saveConsent({ analytics: false, functionality: false, marketing: false });
       });
 
-      /* ---------- 5. Open customize modal ---------- */
       customizeBtn.addEventListener('click', () => {
         modal.classList.add('show');
       });
 
-      /* ---------- 6. Cancel customize ---------- */
       cancelBtn.addEventListener('click', () => {
         modal.classList.remove('show');
       });
 
-      /* ---------- 7. Save custom preferences ---------- */
       saveBtn.addEventListener('click', () => {
         saveConsent({
           analytics:     prefs.analytics.checked,
@@ -654,27 +658,15 @@
         });
       });
 
-      /* ---------- 8. Close modal by clicking outside ---------- */
       modal.addEventListener('click', (e) => {
         if (e.target === modal) modal.classList.remove('show');
       });
 
-      /* ---------- 9. Apply consent (hook your scripts here) ---------- */
       function applyConsent(choice) {
         console.log('Cookie consent saved:', choice);
-
-        if (choice.analytics) {
-          // e.g. loadGoogleAnalytics();
-        }
-        if (choice.functionality) {
-          // e.g. loadPreferenceCookies();
-        }
-        if (choice.marketing) {
-          // e.g. loadMarketingPixels();
-        }
+        // Hook your analytics/marketing scripts here
       }
 
-      // If a saved choice exists, apply it silently on load
       if (saved) {
         try { applyConsent(JSON.parse(saved)); } catch (e) {}
       }
