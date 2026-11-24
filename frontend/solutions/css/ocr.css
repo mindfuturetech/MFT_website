@@ -9,18 +9,107 @@
   overflow-x: hidden;
 }
 
+/* =============================================
+   OCR Hero — Live Animated Gradient
+   ============================================= */
+
 .ocr-hero {
   position: relative;
   min-height: 90vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(145deg, #0b1a2f 0%, #1a2f44 50%, #0b1a2f 100%);
   overflow: hidden;
   margin-top: 84px;
   padding: 60px 0;
+
+  /* Vivid multi-color animated gradient */
+  background: linear-gradient(
+    -45deg,
+    #0b1a2f 0%,
+    #1a2f44 12%,
+    #6b2fa0 28%,
+    #1a4a6b 44%,
+    #9b59b6 58%,
+    #0f6b5c 72%,
+    #1a2f44 86%,
+    #0b1a2f 100%
+  );
+  background-size: 500% 500%;
+  animation: ocrHeroLive 18s ease-in-out infinite;
 }
 
-.ocr-hero-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+@keyframes ocrHeroLive {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 100% 50%; }
+  50%  { background-position: 100% 0%; }
+  75%  { background-position: 0% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Soft color glow blobs that drift for extra life */
+.ocr-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 420px at 20% 30%, rgba(155, 89, 182, 0.35), transparent 70%),
+    radial-gradient(circle 360px at 80% 20%, rgba(52, 152, 219, 0.30), transparent 70%),
+    radial-gradient(circle 400px at 65% 80%, rgba(26, 188, 156, 0.25), transparent 70%),
+    radial-gradient(circle 340px at 15% 85%, rgba(245, 176, 65, 0.20), transparent 70%);
+  background-size: 200% 200%;
+  animation: ocrGlowDrift 20s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes ocrGlowDrift {
+  0%   { background-position: 0% 0%; transform: scale(1); }
+  50%  { background-position: 100% 100%; transform: scale(1.15); }
+  100% { background-position: 0% 0%; transform: scale(1); }
+}
+
+/* Subtle shine sweep */
+.ocr-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.10) 50%,
+    transparent 65%
+  );
+  background-size: 250% 100%;
+  animation: ocrHeroShine 7s linear infinite;
+}
+
+@keyframes ocrHeroShine {
+  0%   { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Contrast overlay — keeps headline readable */
+.ocr-hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse 90% 70% at 50% 50%,
+    transparent 25%,
+    rgba(5, 10, 20, 0.45) 100%
+  );
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ocr-hero,
+  .ocr-hero::before,
+  .ocr-hero::after {
+    animation: none !important;
+  }
+}
 .ocr-hero-shapes { position: absolute; inset: 0; }
 
 .ocr-shape { position: absolute; border-radius: 50%; opacity: 0.3; }
