@@ -154,7 +154,7 @@ async function sendUserThankYou({ firstName, email, position }) {
                     </p>
 
                     <div style="text-align: center; margin: 30px 0;">
-                      <a href="https://mindfuturetech.com" style="display:inline-block; padding: 14px 32px; background: #5b7fa6; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px;">
+                      <a href="https://mindfuturetechsystems.com" style="display:inline-block; padding: 14px 32px; background: #5b7fa6; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px;">
                         Visit Our Website
                       </a>
                     </div>
